@@ -1,0 +1,2 @@
+ZONES = ["A", "B", "C"]
+RISK_THRESHOLD = 0.7
