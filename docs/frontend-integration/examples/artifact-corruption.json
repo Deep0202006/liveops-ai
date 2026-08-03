@@ -1,0 +1,6 @@
+{
+  "code": "ARTIFACT_CORRUPTED",
+  "message": "Artifact checksum mismatch for model.joblib.",
+  "recoverable": false,
+  "safe_details": {}
+}

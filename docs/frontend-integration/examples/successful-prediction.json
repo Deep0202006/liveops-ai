@@ -1,0 +1,26 @@
+{
+  "machine_id": 9001,
+  "observed_through_cycle": 18,
+  "predicted_rul": 79.85,
+  "rul_unit": "cycles",
+  "maintenance_status": "MONITOR",
+  "lower_bound": 64.89,
+  "upper_bound": 96.17,
+  "warnings": [
+    "Synthetic demonstration mode: prediction and metrics are not publishable."
+  ],
+  "important_features": [
+    "operational_setting_1_delta",
+    "sensor_11_mean_5",
+    "sensor_4_mean_5",
+    "sensor_20_mean_5",
+    "sensor_4"
+  ],
+  "recent_changes": [
+    "sensor_12 changed by -0.249 in the latest cycle.",
+    "sensor_18 changed by -0.186 in the latest cycle.",
+    "sensor_11 changed by +0.184 in the latest cycle."
+  ],
+  "model_name": "ridge",
+  "model_version": "1.0.0"
+}

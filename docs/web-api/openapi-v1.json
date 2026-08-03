@@ -1,0 +1,1526 @@
+{
+  "components": {
+    "schemas": {
+      "ApiEnvelope_DatasetInspectionData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DatasetInspectionData"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ApiError"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiMeta"
+          },
+          "success": {
+            "title": "Success",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success",
+          "meta"
+        ],
+        "title": "ApiEnvelope[DatasetInspectionData]",
+        "type": "object"
+      },
+      "ApiEnvelope_EvaluationData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EvaluationData"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ApiError"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiMeta"
+          },
+          "success": {
+            "title": "Success",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success",
+          "meta"
+        ],
+        "title": "ApiEnvelope[EvaluationData]",
+        "type": "object"
+      },
+      "ApiEnvelope_MachineInspectionData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MachineInspectionData"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ApiError"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiMeta"
+          },
+          "success": {
+            "title": "Success",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success",
+          "meta"
+        ],
+        "title": "ApiEnvelope[MachineInspectionData]",
+        "type": "object"
+      },
+      "ApiEnvelope_MachineSeriesData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MachineSeriesData"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ApiError"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiMeta"
+          },
+          "success": {
+            "title": "Success",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success",
+          "meta"
+        ],
+        "title": "ApiEnvelope[MachineSeriesData]",
+        "type": "object"
+      },
+      "ApiEnvelope_ModelMetadataData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelMetadataData"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ApiError"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiMeta"
+          },
+          "success": {
+            "title": "Success",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success",
+          "meta"
+        ],
+        "title": "ApiEnvelope[ModelMetadataData]",
+        "type": "object"
+      },
+      "ApiEnvelope_PredictionData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PredictionData"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ApiError"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiMeta"
+          },
+          "success": {
+            "title": "Success",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success",
+          "meta"
+        ],
+        "title": "ApiEnvelope[PredictionData]",
+        "type": "object"
+      },
+      "ApiEnvelope_StatusData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StatusData"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ApiError"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiMeta"
+          },
+          "success": {
+            "title": "Success",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success",
+          "meta"
+        ],
+        "title": "ApiEnvelope[StatusData]",
+        "type": "object"
+      },
+      "ApiEnvelope_list_DemoSampleData__": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/DemoSampleData"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Data"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ApiError"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiMeta"
+          },
+          "success": {
+            "title": "Success",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success",
+          "meta"
+        ],
+        "title": "ApiEnvelope[list[DemoSampleData]]",
+        "type": "object"
+      },
+      "ApiError": {
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "details": {
+            "additionalProperties": true,
+            "title": "Details",
+            "type": "object"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          },
+          "recoverable": {
+            "title": "Recoverable",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "recoverable"
+        ],
+        "title": "ApiError",
+        "type": "object"
+      },
+      "ApiMeta": {
+        "properties": {
+          "api_version": {
+            "title": "Api Version",
+            "type": "string"
+          },
+          "request_id": {
+            "title": "Request Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "api_version",
+          "request_id"
+        ],
+        "title": "ApiMeta",
+        "type": "object"
+      },
+      "ArtifactMode": {
+        "enum": [
+          "real",
+          "demo"
+        ],
+        "title": "ArtifactMode",
+        "type": "string"
+      },
+      "ArtifactState": {
+        "enum": [
+          "ARTIFACT_UNAVAILABLE",
+          "DEMO_ARTIFACT_AVAILABLE",
+          "REAL_ARTIFACT_AVAILABLE",
+          "ARTIFACT_INVALID"
+        ],
+        "title": "ArtifactState",
+        "type": "string"
+      },
+      "BackendState": {
+        "enum": [
+          "SOFTWARE_READY"
+        ],
+        "title": "BackendState",
+        "type": "string"
+      },
+      "Body_inspect_dataset_api_v1_datasets_inspect_post": {
+        "properties": {
+          "file": {
+            "contentMediaType": "application/octet-stream",
+            "title": "File",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file"
+        ],
+        "title": "Body_inspect_dataset_api_v1_datasets_inspect_post",
+        "type": "object"
+      },
+      "Body_machine_series_api_v1_machines_series_post": {
+        "properties": {
+          "file": {
+            "contentMediaType": "application/octet-stream",
+            "title": "File",
+            "type": "string"
+          },
+          "machine_id": {
+            "title": "Machine Id",
+            "type": "string"
+          },
+          "maximum_points": {
+            "default": 1000,
+            "title": "Maximum Points",
+            "type": "integer"
+          },
+          "sensors": {
+            "default": "",
+            "title": "Sensors",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file",
+          "machine_id"
+        ],
+        "title": "Body_machine_series_api_v1_machines_series_post",
+        "type": "object"
+      },
+      "Body_machine_summary_api_v1_machines_inspect_post": {
+        "properties": {
+          "file": {
+            "contentMediaType": "application/octet-stream",
+            "title": "File",
+            "type": "string"
+          },
+          "machine_id": {
+            "title": "Machine Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file",
+          "machine_id"
+        ],
+        "title": "Body_machine_summary_api_v1_machines_inspect_post",
+        "type": "object"
+      },
+      "Body_prediction_api_v1_predictions_post": {
+        "properties": {
+          "file": {
+            "contentMediaType": "application/octet-stream",
+            "title": "File",
+            "type": "string"
+          },
+          "machine_id": {
+            "title": "Machine Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file",
+          "machine_id"
+        ],
+        "title": "Body_prediction_api_v1_predictions_post",
+        "type": "object"
+      },
+      "DatasetInspectionData": {
+        "additionalProperties": false,
+        "properties": {
+          "column_count": {
+            "minimum": 0.0,
+            "title": "Column Count",
+            "type": "integer"
+          },
+          "dataset_state": {
+            "$ref": "#/components/schemas/DatasetState"
+          },
+          "filename": {
+            "title": "Filename",
+            "type": "string"
+          },
+          "machine_ids": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "title": "Machine Ids",
+            "type": "array"
+          },
+          "row_count": {
+            "minimum": 0.0,
+            "title": "Row Count",
+            "type": "integer"
+          },
+          "validation": {
+            "$ref": "#/components/schemas/ValidationData"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "filename",
+          "validation",
+          "machine_ids",
+          "row_count",
+          "column_count",
+          "dataset_state",
+          "warnings"
+        ],
+        "title": "DatasetInspectionData",
+        "type": "object"
+      },
+      "DatasetState": {
+        "enum": [
+          "REAL_DATASET_REQUIRED",
+          "SYNTHETIC_DEMO_DATA",
+          "REAL_DATASET_VALIDATED"
+        ],
+        "title": "DatasetState",
+        "type": "string"
+      },
+      "DemoSampleCategory": {
+        "enum": [
+          "HEALTHY",
+          "MONITOR",
+          "CRITICAL"
+        ],
+        "title": "DemoSampleCategory",
+        "type": "string"
+      },
+      "DemoSampleData": {
+        "additionalProperties": false,
+        "properties": {
+          "category": {
+            "$ref": "#/components/schemas/DemoSampleCategory"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "filename": {
+            "title": "Filename",
+            "type": "string"
+          },
+          "machine_count": {
+            "minimum": 0.0,
+            "title": "Machine Count",
+            "type": "integer"
+          },
+          "observation_count": {
+            "minimum": 0.0,
+            "title": "Observation Count",
+            "type": "integer"
+          },
+          "sample_id": {
+            "title": "Sample Id",
+            "type": "string"
+          },
+          "warning": {
+            "title": "Warning",
+            "type": "string"
+          }
+        },
+        "required": [
+          "sample_id",
+          "display_name",
+          "filename",
+          "category",
+          "machine_count",
+          "observation_count",
+          "warning"
+        ],
+        "title": "DemoSampleData",
+        "type": "object"
+      },
+      "EvaluationData": {
+        "additionalProperties": false,
+        "properties": {
+          "final_test": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EvaluationMetricData"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          },
+          "metrics_state": {
+            "$ref": "#/components/schemas/MetricsState"
+          },
+          "training_data_kind": {
+            "$ref": "#/components/schemas/TrainingDataKind"
+          },
+          "validation_models": {
+            "items": {
+              "$ref": "#/components/schemas/EvaluationMetricData"
+            },
+            "title": "Validation Models",
+            "type": "array"
+          }
+        },
+        "required": [
+          "metrics_state",
+          "final_test",
+          "validation_models",
+          "message",
+          "training_data_kind"
+        ],
+        "title": "EvaluationData",
+        "type": "object"
+      },
+      "EvaluationMetricData": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_size_bytes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Artifact Size Bytes"
+          },
+          "error_by_rul_band": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Error By Rul Band",
+            "type": "object"
+          },
+          "machine_count": {
+            "minimum": 0.0,
+            "title": "Machine Count",
+            "type": "integer"
+          },
+          "machine_mae_std": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Machine Mae Std"
+          },
+          "mae": {
+            "title": "Mae",
+            "type": "number"
+          },
+          "median_absolute_error": {
+            "title": "Median Absolute Error",
+            "type": "number"
+          },
+          "model_name": {
+            "title": "Model Name",
+            "type": "string"
+          },
+          "near_failure_mae": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Near Failure Mae"
+          },
+          "observation_count": {
+            "minimum": 0.0,
+            "title": "Observation Count",
+            "type": "integer"
+          },
+          "r2": {
+            "title": "R2",
+            "type": "number"
+          },
+          "rmse": {
+            "title": "Rmse",
+            "type": "number"
+          },
+          "runtime_seconds": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Runtime Seconds"
+          }
+        },
+        "required": [
+          "model_name",
+          "mae",
+          "rmse",
+          "median_absolute_error",
+          "r2",
+          "machine_count",
+          "observation_count",
+          "near_failure_mae",
+          "machine_mae_std",
+          "error_by_rul_band",
+          "runtime_seconds",
+          "artifact_size_bytes"
+        ],
+        "title": "EvaluationMetricData",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "MachineInspectionData": {
+        "additionalProperties": false,
+        "properties": {
+          "available_sensor_columns": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Available Sensor Columns",
+            "type": "array"
+          },
+          "first_cycle": {
+            "title": "First Cycle",
+            "type": "integer"
+          },
+          "latest_cycle": {
+            "title": "Latest Cycle",
+            "type": "integer"
+          },
+          "latest_sensor_values": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Latest Sensor Values",
+            "type": "object"
+          },
+          "machine_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "title": "Machine Id"
+          },
+          "observation_count": {
+            "minimum": 0.0,
+            "title": "Observation Count",
+            "type": "integer"
+          },
+          "prediction_ready": {
+            "title": "Prediction Ready",
+            "type": "boolean"
+          },
+          "recent_changes": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Recent Changes",
+            "type": "array"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "machine_id",
+          "observation_count",
+          "first_cycle",
+          "latest_cycle",
+          "latest_sensor_values",
+          "warnings",
+          "available_sensor_columns",
+          "recent_changes",
+          "prediction_ready"
+        ],
+        "title": "MachineInspectionData",
+        "type": "object"
+      },
+      "MachineSeriesData": {
+        "additionalProperties": false,
+        "properties": {
+          "cycle": {
+            "items": {
+              "type": "integer"
+            },
+            "title": "Cycle",
+            "type": "array"
+          },
+          "machine_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "title": "Machine Id"
+          },
+          "series": {
+            "additionalProperties": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "title": "Series",
+            "type": "object"
+          }
+        },
+        "required": [
+          "machine_id",
+          "cycle",
+          "series"
+        ],
+        "title": "MachineSeriesData",
+        "type": "object"
+      },
+      "MaintenanceStatus": {
+        "enum": [
+          "CRITICAL",
+          "PLAN_MAINTENANCE",
+          "MONITOR",
+          "HEALTHY"
+        ],
+        "title": "MaintenanceStatus",
+        "type": "string"
+      },
+      "MaintenanceThresholds": {
+        "additionalProperties": false,
+        "properties": {
+          "monitor_at_or_below": {
+            "title": "Monitor At Or Below",
+            "type": "number"
+          },
+          "plan_at_or_below": {
+            "title": "Plan At Or Below",
+            "type": "number"
+          },
+          "urgent_at_or_below": {
+            "title": "Urgent At Or Below",
+            "type": "number"
+          }
+        },
+        "required": [
+          "urgent_at_or_below",
+          "plan_at_or_below",
+          "monitor_at_or_below"
+        ],
+        "title": "MaintenanceThresholds",
+        "type": "object"
+      },
+      "MetricsState": {
+        "enum": [
+          "FINAL_METRICS_UNAVAILABLE",
+          "DEMO_METRICS_NOT_PUBLISHABLE",
+          "FINAL_METRICS_AVAILABLE"
+        ],
+        "title": "MetricsState",
+        "type": "string"
+      },
+      "ModelMetadataData": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Artifact Version"
+          },
+          "dataset_fingerprint": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Dataset Fingerprint"
+          },
+          "demo_only": {
+            "title": "Demo Only",
+            "type": "boolean"
+          },
+          "feature_count": {
+            "minimum": 0.0,
+            "title": "Feature Count",
+            "type": "integer"
+          },
+          "maintenance_thresholds": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MaintenanceThresholds"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "metrics_publishable": {
+            "title": "Metrics Publishable",
+            "type": "boolean"
+          },
+          "model_name": {
+            "title": "Model Name",
+            "type": "string"
+          },
+          "model_version": {
+            "title": "Model Version",
+            "type": "string"
+          },
+          "rul_unit": {
+            "title": "Rul Unit",
+            "type": "string"
+          },
+          "training_data_kind": {
+            "$ref": "#/components/schemas/TrainingDataKind"
+          }
+        },
+        "required": [
+          "model_name",
+          "model_version",
+          "training_data_kind",
+          "demo_only",
+          "feature_count",
+          "rul_unit",
+          "maintenance_thresholds",
+          "artifact_version",
+          "dataset_fingerprint",
+          "metrics_publishable"
+        ],
+        "title": "ModelMetadataData",
+        "type": "object"
+      },
+      "ModelState": {
+        "enum": [
+          "MODEL_NOT_TRAINED",
+          "DEMO_MODEL_TRAINED",
+          "REAL_MODEL_TRAINED"
+        ],
+        "title": "ModelState",
+        "type": "string"
+      },
+      "PredictionData": {
+        "properties": {
+          "demo_only": {
+            "title": "Demo Only",
+            "type": "boolean"
+          },
+          "important_features": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Important Features",
+            "type": "array"
+          },
+          "lower_bound": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lower Bound"
+          },
+          "machine_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "title": "Machine Id"
+          },
+          "maintenance_status": {
+            "$ref": "#/components/schemas/MaintenanceStatus"
+          },
+          "model_name": {
+            "title": "Model Name",
+            "type": "string"
+          },
+          "model_version": {
+            "title": "Model Version",
+            "type": "string"
+          },
+          "observed_through_cycle": {
+            "title": "Observed Through Cycle",
+            "type": "integer"
+          },
+          "predicted_rul": {
+            "title": "Predicted Rul",
+            "type": "number"
+          },
+          "recent_changes": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Recent Changes",
+            "type": "array"
+          },
+          "rul_unit": {
+            "title": "Rul Unit",
+            "type": "string"
+          },
+          "upper_bound": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upper Bound"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "machine_id",
+          "observed_through_cycle",
+          "predicted_rul",
+          "rul_unit",
+          "maintenance_status",
+          "lower_bound",
+          "upper_bound",
+          "warnings",
+          "important_features",
+          "recent_changes",
+          "model_name",
+          "model_version",
+          "demo_only"
+        ],
+        "title": "PredictionData",
+        "type": "object"
+      },
+      "StatusData": {
+        "properties": {
+          "api_version": {
+            "title": "Api Version",
+            "type": "string"
+          },
+          "artifact_state": {
+            "$ref": "#/components/schemas/ArtifactState"
+          },
+          "backend_contract_version": {
+            "title": "Backend Contract Version",
+            "type": "string"
+          },
+          "backend_state": {
+            "$ref": "#/components/schemas/BackendState"
+          },
+          "dataset_state": {
+            "$ref": "#/components/schemas/DatasetState"
+          },
+          "demo_only": {
+            "title": "Demo Only",
+            "type": "boolean"
+          },
+          "metrics_state": {
+            "$ref": "#/components/schemas/MetricsState"
+          },
+          "model_state": {
+            "$ref": "#/components/schemas/ModelState"
+          },
+          "prediction_available": {
+            "title": "Prediction Available",
+            "type": "boolean"
+          },
+          "product_name": {
+            "title": "Product Name",
+            "type": "string"
+          },
+          "run_mode": {
+            "$ref": "#/components/schemas/ArtifactMode"
+          }
+        },
+        "required": [
+          "product_name",
+          "api_version",
+          "backend_contract_version",
+          "run_mode",
+          "backend_state",
+          "dataset_state",
+          "model_state",
+          "artifact_state",
+          "metrics_state",
+          "prediction_available",
+          "demo_only"
+        ],
+        "title": "StatusData",
+        "type": "object"
+      },
+      "TrainingDataKind": {
+        "enum": [
+          "real",
+          "synthetic"
+        ],
+        "title": "TrainingDataKind",
+        "type": "string"
+      },
+      "ValidationData": {
+        "additionalProperties": false,
+        "properties": {
+          "constant_sensor_columns": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Constant Sensor Columns",
+            "type": "array"
+          },
+          "machine_count": {
+            "minimum": 0.0,
+            "title": "Machine Count",
+            "type": "integer"
+          },
+          "missing_cycles_by_machine": {
+            "additionalProperties": {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            "title": "Missing Cycles By Machine",
+            "type": "object"
+          },
+          "observation_count": {
+            "minimum": 0.0,
+            "title": "Observation Count",
+            "type": "integer"
+          },
+          "valid": {
+            "title": "Valid",
+            "type": "boolean"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "valid",
+          "machine_count",
+          "observation_count",
+          "warnings",
+          "constant_sensor_columns",
+          "missing_cycles_by_machine"
+        ],
+        "title": "ValidationData",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "LiveOps AI",
+    "version": "1.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "root__get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Root"
+      }
+    },
+    "/api/v1/datasets/inspect": {
+      "post": {
+        "operationId": "inspect_dataset_api_v1_datasets_inspect_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_inspect_dataset_api_v1_datasets_inspect_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiEnvelope_DatasetInspectionData_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Inspect Dataset"
+      }
+    },
+    "/api/v1/demo/samples": {
+      "get": {
+        "operationId": "samples_api_v1_demo_samples_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiEnvelope_list_DemoSampleData__"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Samples"
+      }
+    },
+    "/api/v1/health/live": {
+      "get": {
+        "operationId": "live_api_v1_health_live_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Live"
+      }
+    },
+    "/api/v1/health/ready": {
+      "get": {
+        "operationId": "ready_api_v1_health_ready_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Ready"
+      }
+    },
+    "/api/v1/machines/inspect": {
+      "post": {
+        "operationId": "machine_summary_api_v1_machines_inspect_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_machine_summary_api_v1_machines_inspect_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiEnvelope_MachineInspectionData_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Machine Summary"
+      }
+    },
+    "/api/v1/machines/series": {
+      "post": {
+        "operationId": "machine_series_api_v1_machines_series_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_machine_series_api_v1_machines_series_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiEnvelope_MachineSeriesData_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Machine Series"
+      }
+    },
+    "/api/v1/model/evaluation": {
+      "get": {
+        "operationId": "evaluation_endpoint_api_v1_model_evaluation_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiEnvelope_EvaluationData_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Evaluation Endpoint"
+      }
+    },
+    "/api/v1/model/metadata": {
+      "get": {
+        "operationId": "metadata_endpoint_api_v1_model_metadata_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiEnvelope_ModelMetadataData_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Metadata Endpoint"
+      }
+    },
+    "/api/v1/predictions": {
+      "post": {
+        "operationId": "prediction_api_v1_predictions_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_prediction_api_v1_predictions_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiEnvelope_PredictionData_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Prediction"
+      }
+    },
+    "/api/v1/status": {
+      "get": {
+        "operationId": "status_endpoint_api_v1_status_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiEnvelope_StatusData_"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Status Endpoint"
+      }
+    }
+  }
+}

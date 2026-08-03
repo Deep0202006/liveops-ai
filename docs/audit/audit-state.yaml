@@ -1,0 +1,68 @@
+project: factory-machine-rul-predictor
+project_type: academic
+project_context: independent-new-project
+branch: audit/rul-project-strengthening
+deployment_required: false
+current_phase: backend-hardening-final-verification
+
+repository:
+  root_verified: true
+  working_tree_status: dirty-preserved
+  python_version: "3.14.2"
+  dependency_manager: "pip requirements.txt plus npm package-lock.json"
+
+dataset:
+  name: none
+  source: none
+  file_location: none
+  machine_id_column: none
+  time_or_cycle_column: none
+  target_column: none
+  rul_unit: inconsistent-ticks-versus-hours
+  sensor_columns: [temperature, vibration, power_variation, load, lubrication_level]
+  operational_columns: [zone, machine_type, interlock_active]
+
+current_model:
+  algorithm: rule-based-heuristic-no-trained-model
+  preprocessing: none
+  feature_engineering: in-memory-10-event-trend-statistics
+  split_method: none
+  metrics: {}
+  artifact_location: none
+
+verification:
+  dependencies: partially-verified
+  imports: verified
+  application_startup: partially-verified
+  training: verified-on-synthetic-software-fixture-real-metrics-blocked
+  evaluation: verified-on-synthetic-software-fixture-real-metrics-blocked
+  prediction: verified-on-synthetic-software-fixture
+  ui: verified-streamlit-startup-legacy-lint-fails
+  tests: verified-28-passed
+
+blockers:
+  - No validated run-to-failure dataset is present.
+  - No supervised RUL training or evaluation pipeline exists.
+  - Existing worktree contains extensive user changes that must be preserved.
+risks:
+  - Existing heuristic RUL is presented as a prediction despite no learned model or ground truth.
+  - RUL units conflict between backend documentation and frontend.
+  - Hard-coded confidence, savings, and success values damage academic credibility.
+  - No automated tests or reproducible environment exists.
+completed_items:
+  - Repository root and Git state verified.
+  - Audit branch created without altering existing user work.
+  - Baseline Python import and frontend build reproduced.
+  - Mandatory audit documents and strengthening plan created.
+  - Added validated C-MAPSS schema loading and cycle-based RUL targets.
+  - Added causal features and deterministic machine-disjoint splitting.
+  - Added lightweight baseline comparison, artifact validation, and shared inference.
+  - Added 12 deterministic tests including synthetic end-to-end software verification.
+  - Added an honest local Streamlit examiner interface and final documentation.
+  - Completed dependency, import, test, UI-startup, build, secret, size, and Git verification.
+  - Hardened typed backend service, validation, model selection, explainability, uncertainty, artifacts, and CLI workflows.
+  - Completed backend verification with 28 passing tests and frontend freeze confirmed.
+remaining_items:
+  - Acquire verified official C-MAPSS files before reporting real model metrics.
+  - Generate a trusted official-data artifact before the examiner prediction demonstration.
+last_verified_commit: e86837f

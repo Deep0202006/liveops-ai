@@ -1,0 +1,761 @@
+{
+  "model_name": "ridge",
+  "model_version": "1.0.0",
+  "dataset_name": "LiveOps deterministic synthetic integration data",
+  "dataset_subset": "DEMO_V1",
+  "rul_unit": "cycles",
+  "feature_names": [
+    "cycle",
+    "operational_setting_1",
+    "operational_setting_2",
+    "operational_setting_3",
+    "sensor_1",
+    "sensor_2",
+    "sensor_3",
+    "sensor_4",
+    "sensor_5",
+    "sensor_6",
+    "sensor_7",
+    "sensor_8",
+    "sensor_9",
+    "sensor_10",
+    "sensor_11",
+    "sensor_12",
+    "sensor_13",
+    "sensor_14",
+    "sensor_15",
+    "sensor_16",
+    "sensor_17",
+    "sensor_18",
+    "sensor_19",
+    "sensor_20",
+    "sensor_21",
+    "operational_setting_1_mean_5",
+    "operational_setting_1_std_5",
+    "operational_setting_1_delta",
+    "operational_setting_2_mean_5",
+    "operational_setting_2_std_5",
+    "operational_setting_2_delta",
+    "operational_setting_3_mean_5",
+    "operational_setting_3_std_5",
+    "operational_setting_3_delta",
+    "sensor_1_mean_5",
+    "sensor_1_std_5",
+    "sensor_1_delta",
+    "sensor_2_mean_5",
+    "sensor_2_std_5",
+    "sensor_2_delta",
+    "sensor_3_mean_5",
+    "sensor_3_std_5",
+    "sensor_3_delta",
+    "sensor_4_mean_5",
+    "sensor_4_std_5",
+    "sensor_4_delta",
+    "sensor_5_mean_5",
+    "sensor_5_std_5",
+    "sensor_5_delta",
+    "sensor_6_mean_5",
+    "sensor_6_std_5",
+    "sensor_6_delta",
+    "sensor_7_mean_5",
+    "sensor_7_std_5",
+    "sensor_7_delta",
+    "sensor_8_mean_5",
+    "sensor_8_std_5",
+    "sensor_8_delta",
+    "sensor_9_mean_5",
+    "sensor_9_std_5",
+    "sensor_9_delta",
+    "sensor_10_mean_5",
+    "sensor_10_std_5",
+    "sensor_10_delta",
+    "sensor_11_mean_5",
+    "sensor_11_std_5",
+    "sensor_11_delta",
+    "sensor_12_mean_5",
+    "sensor_12_std_5",
+    "sensor_12_delta",
+    "sensor_13_mean_5",
+    "sensor_13_std_5",
+    "sensor_13_delta",
+    "sensor_14_mean_5",
+    "sensor_14_std_5",
+    "sensor_14_delta",
+    "sensor_15_mean_5",
+    "sensor_15_std_5",
+    "sensor_15_delta",
+    "sensor_16_mean_5",
+    "sensor_16_std_5",
+    "sensor_16_delta",
+    "sensor_17_mean_5",
+    "sensor_17_std_5",
+    "sensor_17_delta",
+    "sensor_18_mean_5",
+    "sensor_18_std_5",
+    "sensor_18_delta",
+    "sensor_19_mean_5",
+    "sensor_19_std_5",
+    "sensor_19_delta",
+    "sensor_20_mean_5",
+    "sensor_20_std_5",
+    "sensor_20_delta",
+    "sensor_21_mean_5",
+    "sensor_21_std_5",
+    "sensor_21_delta"
+  ],
+  "removed_features": [
+    "operational_setting_3_std_5",
+    "operational_setting_3_delta"
+  ],
+  "training_data_kind": "synthetic",
+  "demo_only": true,
+  "metrics_publishable": false,
+  "raw": {
+    "model_name": "ridge",
+    "model_version": "1.0.0",
+    "dataset_name": "LiveOps deterministic synthetic integration data",
+    "dataset_subset": "DEMO_V1",
+    "dataset_fingerprint": "ca29a3032995c8073268aeeec209a8cec124a2a3da6c042480cabf7506c4932c",
+    "target_formula": "min(final_failure_cycle - current_cycle, cap)",
+    "target_strategy": "min(max_cycle - cycle, cap)",
+    "rul_unit": "cycles",
+    "rul_cap": 125,
+    "feature_names": [
+      "cycle",
+      "operational_setting_1",
+      "operational_setting_2",
+      "operational_setting_3",
+      "sensor_1",
+      "sensor_2",
+      "sensor_3",
+      "sensor_4",
+      "sensor_5",
+      "sensor_6",
+      "sensor_7",
+      "sensor_8",
+      "sensor_9",
+      "sensor_10",
+      "sensor_11",
+      "sensor_12",
+      "sensor_13",
+      "sensor_14",
+      "sensor_15",
+      "sensor_16",
+      "sensor_17",
+      "sensor_18",
+      "sensor_19",
+      "sensor_20",
+      "sensor_21",
+      "operational_setting_1_mean_5",
+      "operational_setting_1_std_5",
+      "operational_setting_1_delta",
+      "operational_setting_2_mean_5",
+      "operational_setting_2_std_5",
+      "operational_setting_2_delta",
+      "operational_setting_3_mean_5",
+      "operational_setting_3_std_5",
+      "operational_setting_3_delta",
+      "sensor_1_mean_5",
+      "sensor_1_std_5",
+      "sensor_1_delta",
+      "sensor_2_mean_5",
+      "sensor_2_std_5",
+      "sensor_2_delta",
+      "sensor_3_mean_5",
+      "sensor_3_std_5",
+      "sensor_3_delta",
+      "sensor_4_mean_5",
+      "sensor_4_std_5",
+      "sensor_4_delta",
+      "sensor_5_mean_5",
+      "sensor_5_std_5",
+      "sensor_5_delta",
+      "sensor_6_mean_5",
+      "sensor_6_std_5",
+      "sensor_6_delta",
+      "sensor_7_mean_5",
+      "sensor_7_std_5",
+      "sensor_7_delta",
+      "sensor_8_mean_5",
+      "sensor_8_std_5",
+      "sensor_8_delta",
+      "sensor_9_mean_5",
+      "sensor_9_std_5",
+      "sensor_9_delta",
+      "sensor_10_mean_5",
+      "sensor_10_std_5",
+      "sensor_10_delta",
+      "sensor_11_mean_5",
+      "sensor_11_std_5",
+      "sensor_11_delta",
+      "sensor_12_mean_5",
+      "sensor_12_std_5",
+      "sensor_12_delta",
+      "sensor_13_mean_5",
+      "sensor_13_std_5",
+      "sensor_13_delta",
+      "sensor_14_mean_5",
+      "sensor_14_std_5",
+      "sensor_14_delta",
+      "sensor_15_mean_5",
+      "sensor_15_std_5",
+      "sensor_15_delta",
+      "sensor_16_mean_5",
+      "sensor_16_std_5",
+      "sensor_16_delta",
+      "sensor_17_mean_5",
+      "sensor_17_std_5",
+      "sensor_17_delta",
+      "sensor_18_mean_5",
+      "sensor_18_std_5",
+      "sensor_18_delta",
+      "sensor_19_mean_5",
+      "sensor_19_std_5",
+      "sensor_19_delta",
+      "sensor_20_mean_5",
+      "sensor_20_std_5",
+      "sensor_20_delta",
+      "sensor_21_mean_5",
+      "sensor_21_std_5",
+      "sensor_21_delta"
+    ],
+    "removed_features": [
+      "operational_setting_3_std_5",
+      "operational_setting_3_delta"
+    ],
+    "feature_configuration": {
+      "rolling_window": 5,
+      "features": "current, trailing mean, trailing std, previous-cycle delta",
+      "causal": true,
+      "variance_threshold": 1e-12
+    },
+    "feature_schema_hash": "93b8d0137f3232d288c0f445d3d80b2f3c2a5bd368a226f100137d72ae4a839d",
+    "split_method": "machine-level train/validation; official dataset test split",
+    "random_seed": 42,
+    "training_machine_count": 9,
+    "validation_machine_count": 3,
+    "test_machine_count": 0,
+    "train_machine_ids": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      9,
+      10,
+      11,
+      12
+    ],
+    "validation_machine_ids": [
+      1,
+      7,
+      8
+    ],
+    "validation_metrics": {
+      "dummy_median": {
+        "model_name": "dummy_median",
+        "mae": 26.886666666666667,
+        "rmse": 32.07896507058792,
+        "median_absolute_error": 25.0,
+        "r2": -0.00044076886924782066,
+        "machine_count": 3,
+        "observation_count": 300,
+        "near_failure_mae": 39.5,
+        "machine_mae_std": 4.750746388863045,
+        "error_by_rul_band": {
+          "0-25": 39.5,
+          "26-75": 12.54,
+          "76+": 43.111111111111114
+        },
+        "runtime_seconds": 0.002656599972397089,
+        "artifact_size_bytes": 4505
+      },
+      "ridge": {
+        "model_name": "ridge",
+        "mae": 8.611963860107592,
+        "rmse": 10.911823023888724,
+        "median_absolute_error": 6.230401213524313,
+        "r2": 0.8842435201832247,
+        "machine_count": 3,
+        "observation_count": 300,
+        "near_failure_mae": 2.970105908288505,
+        "machine_mae_std": 0.5864108369707943,
+        "error_by_rul_band": {
+          "0-25": 2.970105908288505,
+          "26-75": 7.359208272947144,
+          "76+": 17.333884114495877
+        },
+        "runtime_seconds": 0.003809699905104935,
+        "artifact_size_bytes": 8025
+      },
+      "extra_trees": {
+        "model_name": "extra_trees",
+        "mae": 10.646307870370372,
+        "rmse": 12.625759837698125,
+        "median_absolute_error": 9.519097222222221,
+        "r2": 0.845023541521793,
+        "machine_count": 3,
+        "observation_count": 300,
+        "near_failure_mae": 3.0124643874643873,
+        "machine_mae_std": 1.9949822007459415,
+        "error_by_rul_band": {
+          "0-25": 3.0124643874643877,
+          "26-75": 10.99414351851852,
+          "76+": 18.19164737654321
+        },
+        "runtime_seconds": 0.009680400020442903,
+        "artifact_size_bytes": 2826522
+      }
+    },
+    "candidate_models": [
+      "dummy_median",
+      "ridge",
+      "extra_trees"
+    ],
+    "selection_rule": "Require >=1% validation MAE improvement over Dummy; among models within 5% of best MAE, exclude materially worse near-failure/stability results and prefer simpler, smaller, faster models.",
+    "selection_reason": "Selected ridge: it meaningfully beat Dummy and was the simplest acceptable model within 5% of best validation MAE without materially worse near-failure error or stability.",
+    "selected_model": "ridge",
+    "final_test_metrics": null,
+    "prediction_range": {
+      "method": "validation residual quantiles",
+      "lower_quantile": 0.1,
+      "upper_quantile": 0.9,
+      "lower_residual_cycles": -14.961565263273807,
+      "upper_residual_cycles": 16.315498978424635
+    },
+    "important_features": [
+      "operational_setting_1_delta",
+      "sensor_11_mean_5",
+      "sensor_4_mean_5",
+      "sensor_20_mean_5",
+      "sensor_4"
+    ],
+    "native_feature_importance": {},
+    "training_ranges": {
+      "cycle": [
+        1.0,
+        127.0
+      ],
+      "operational_setting_1": [
+        -0.19996,
+        0.19999
+      ],
+      "operational_setting_2": [
+        -0.09997,
+        0.09999
+      ],
+      "operational_setting_3": [
+        0.0,
+        2.0
+      ],
+      "sensor_1": [
+        102.05192,
+        108.256149
+      ],
+      "sensor_2": [
+        104.977721,
+        111.597547
+      ],
+      "sensor_3": [
+        103.07863,
+        110.060185
+      ],
+      "sensor_4": [
+        110.992824,
+        118.25284
+      ],
+      "sensor_5": [
+        114.0524,
+        121.708712
+      ],
+      "sensor_6": [
+        110.929886,
+        119.107555
+      ],
+      "sensor_7": [
+        120.062232,
+        128.621978
+      ],
+      "sensor_8": [
+        123.029081,
+        131.621894
+      ],
+      "sensor_9": [
+        118.721345,
+        128.096665
+      ],
+      "sensor_10": [
+        128.919907,
+        138.417944
+      ],
+      "sensor_11": [
+        131.969694,
+        142.019089
+      ],
+      "sensor_12": [
+        126.835911,
+        137.129344
+      ],
+      "sensor_13": [
+        138.00625,
+        148.579304
+      ],
+      "sensor_14": [
+        141.016776,
+        151.79464
+      ],
+      "sensor_15": [
+        134.855108,
+        146.123898
+      ],
+      "sensor_16": [
+        146.961422,
+        158.434601
+      ],
+      "sensor_17": [
+        150.028759,
+        161.860817
+      ],
+      "sensor_18": [
+        142.666557,
+        155.141286
+      ],
+      "sensor_19": [
+        156.043997,
+        168.873798
+      ],
+      "sensor_20": [
+        158.988629,
+        171.92254
+      ],
+      "sensor_21": [
+        150.553206,
+        164.109192
+      ],
+      "operational_setting_1_mean_5": [
+        -0.19877799999999998,
+        0.19881
+      ],
+      "operational_setting_1_std_5": [
+        0.0,
+        0.021681324129305412
+      ],
+      "operational_setting_1_delta": [
+        -0.015380000000000001,
+        0.01538
+      ],
+      "operational_setting_2_mean_5": [
+        -0.09962599999999999,
+        0.09983
+      ],
+      "operational_setting_2_std_5": [
+        0.0,
+        0.008301436984040888
+      ],
+      "operational_setting_2_delta": [
+        -0.00588,
+        0.00588
+      ],
+      "operational_setting_3_mean_5": [
+        0.0,
+        2.0
+      ],
+      "operational_setting_3_std_5": [
+        0.0,
+        0.0
+      ],
+      "operational_setting_3_delta": [
+        0.0,
+        0.0
+      ],
+      "sensor_1_mean_5": [
+        102.0562725,
+        108.12183999999999
+      ],
+      "sensor_1_std_5": [
+        0.0,
+        0.1711375765189239
+      ],
+      "sensor_1_delta": [
+        -0.1924499999999938,
+        0.2444890000000015
+      ],
+      "sensor_2_mean_5": [
+        104.977721,
+        111.4832372
+      ],
+      "sensor_2_std_5": [
+        0.0,
+        0.19563105783942886
+      ],
+      "sensor_2_delta": [
+        -0.18600899999999854,
+        0.27055500000000166
+      ],
+      "sensor_3_mean_5": [
+        103.2195414,
+        110.0208384
+      ],
+      "sensor_3_std_5": [
+        0.0,
+        0.18701564453280964
+      ],
+      "sensor_3_delta": [
+        -0.24639200000000017,
+        0.19574199999999564
+      ],
+      "sensor_4_mean_5": [
+        111.05828149999999,
+        118.16553019999999
+      ],
+      "sensor_4_std_5": [
+        0.0,
+        0.19555090626853666
+      ],
+      "sensor_4_delta": [
+        -0.20546699999999873,
+        0.2697330000000022
+      ],
+      "sensor_5_mean_5": [
+        114.0524,
+        121.476494
+      ],
+      "sensor_5_std_5": [
+        0.0,
+        0.21096695182356404
+      ],
+      "sensor_5_delta": [
+        -0.1855070000000012,
+        0.34365099999999416
+      ],
+      "sensor_6_mean_5": [
+        111.14993199999999,
+        119.04547520000001
+      ],
+      "sensor_6_std_5": [
+        0.0,
+        0.21328492775109603
+      ],
+      "sensor_6_delta": [
+        -0.3284090000000077,
+        0.18642899999998974
+      ],
+      "sensor_7_mean_5": [
+        120.0674485,
+        128.381255
+      ],
+      "sensor_7_std_5": [
+        0.0,
+        0.21857444296319595
+      ],
+      "sensor_7_delta": [
+        -0.21479700000000435,
+        0.35151899999999614
+      ],
+      "sensor_8_mean_5": [
+        123.029081,
+        131.538583
+      ],
+      "sensor_8_std_5": [
+        0.0,
+        0.2794775857069261
+      ],
+      "sensor_8_delta": [
+        -0.17061600000000965,
+        0.32919700000000773
+      ],
+      "sensor_9_mean_5": [
+        118.955558,
+        128.02646180000002
+      ],
+      "sensor_9_std_5": [
+        0.0,
+        0.26277110353704586
+      ],
+      "sensor_9_delta": [
+        -0.3320070000000044,
+        0.20111699999999644
+      ],
+      "sensor_10_mean_5": [
+        128.919907,
+        138.25428240000002
+      ],
+      "sensor_10_std_5": [
+        0.0,
+        0.29435289982824925
+      ],
+      "sensor_10_delta": [
+        -0.20403299999998126,
+        0.4965440000000001
+      ],
+      "sensor_11_mean_5": [
+        131.969694,
+        141.717678
+      ],
+      "sensor_11_std_5": [
+        0.0,
+        0.27833357477496357
+      ],
+      "sensor_11_delta": [
+        -0.22137099999997645,
+        0.3649449999999774
+      ],
+      "sensor_12_mean_5": [
+        127.1284226,
+        137.063024
+      ],
+      "sensor_12_std_5": [
+        0.0,
+        0.3031243188381938
+      ],
+      "sensor_12_delta": [
+        -0.3987989999999968,
+        0.26619600000000787
+      ],
+      "sensor_13_mean_5": [
+        138.011996,
+        148.2284502
+      ],
+      "sensor_13_std_5": [
+        0.0,
+        0.30269169340164315
+      ],
+      "sensor_13_delta": [
+        -0.22834899999998015,
+        0.4405150000000049
+      ],
+      "sensor_14_mean_5": [
+        141.0706492,
+        151.5515982
+      ],
+      "sensor_14_std_5": [
+        0.0,
+        0.29492660860202596
+      ],
+      "sensor_14_delta": [
+        -0.31892799999999966,
+        0.40826899999999
+      ],
+      "sensor_15_mean_5": [
+        135.1908686,
+        146.0317182
+      ],
+      "sensor_15_std_5": [
+        0.0,
+        0.32659481719933253
+      ],
+      "sensor_15_delta": [
+        -0.4814649999999858,
+        0.3029059999999788
+      ],
+      "sensor_16_mean_5": [
+        146.961422,
+        158.240143
+      ],
+      "sensor_16_std_5": [
+        0.0,
+        0.34320561588743526
+      ],
+      "sensor_16_delta": [
+        -0.34001100000000406,
+        0.48061100000001034
+      ],
+      "sensor_17_mean_5": [
+        150.0968425,
+        161.539344
+      ],
+      "sensor_17_std_5": [
+        0.0,
+        0.3605164711673937
+      ],
+      "sensor_17_delta": [
+        -0.2540499999999781,
+        0.5042290000000094
+      ],
+      "sensor_18_mean_5": [
+        143.069822,
+        155.0863648
+      ],
+      "sensor_18_std_5": [
+        0.0,
+        0.3253416842384551
+      ],
+      "sensor_18_delta": [
+        -0.5116680000000144,
+        0.3261540000000025
+      ],
+      "sensor_19_mean_5": [
+        156.0538905,
+        168.42270720000002
+      ],
+      "sensor_19_std_5": [
+        0.0,
+        0.3391535952087544
+      ],
+      "sensor_19_delta": [
+        -0.29779400000001033,
+        0.5278810000000078
+      ],
+      "sensor_20_mean_5": [
+        158.988629,
+        171.56140960000002
+      ],
+      "sensor_20_std_5": [
+        0.0,
+        0.3747585043744186
+      ],
+      "sensor_20_delta": [
+        -0.2560999999999751,
+        0.5632339999999942
+      ],
+      "sensor_21_mean_5": [
+        150.884908,
+        164.0613476
+      ],
+      "sensor_21_std_5": [
+        0.0,
+        0.3984045140072916
+      ],
+      "sensor_21_delta": [
+        -0.49542900000000145,
+        0.3529670000000067
+      ]
+    },
+    "training_seconds": 1.9943902000086382,
+    "training_date_utc": "2026-08-02T09:38:55.223606+00:00",
+    "python_version": "3.14.2",
+    "library_versions": {
+      "pandas": "3.0.5",
+      "scikit_learn": "1.9.0"
+    },
+    "training_config": {
+      "random_seed": 42,
+      "validation_fraction": 0.25,
+      "rul_cap": 125,
+      "rolling_window": 5,
+      "minimum_history": 5,
+      "validation_residual_lower_quantile": 0.1,
+      "validation_residual_upper_quantile": 0.9,
+      "near_failure_threshold": 25,
+      "variance_threshold": 1e-12,
+      "rul_bands": [
+        25,
+        75
+      ],
+      "extra_trees_estimators": 48,
+      "permutation_repeats": 1,
+      "dummy_min_relative_improvement": 0.01,
+      "materially_similar_mae_fraction": 0.05,
+      "acceptable_secondary_degradation_fraction": 0.1
+    },
+    "training_data_kind": "synthetic",
+    "demo_only": true,
+    "metrics_publishable": false,
+    "scientific_validity": "software-verification-only",
+    "maintenance_thresholds": {
+      "urgent_at_or_below": 25.0,
+      "plan_at_or_below": 50.0,
+      "monitor_at_or_below": 80.0
+    }
+  }
+}

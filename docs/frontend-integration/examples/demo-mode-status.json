@@ -1,0 +1,11 @@
+{
+  "contract_version": "1.0",
+  "backend_state": "SOFTWARE_READY",
+  "dataset_state": "SYNTHETIC_DEMO_DATA",
+  "model_state": "DEMO_MODEL_TRAINED",
+  "artifact_state": "DEMO_ARTIFACT_AVAILABLE",
+  "metrics_state": "DEMO_METRICS_NOT_PUBLISHABLE",
+  "prediction_available": true,
+  "demo_only": true,
+  "message": "Synthetic demonstration model; metrics are not publishable."
+}

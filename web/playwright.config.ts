@@ -1,0 +1,22 @@
+import { defineConfig } from "@playwright/test";
+
+export default defineConfig({
+  testDir: "./e2e",
+  snapshotPathTemplate: "../docs/frontend/screenshots/{arg}{ext}",
+  timeout: 45_000,
+  fullyParallel: false,
+  workers: 1,
+  use: {
+    baseURL: "http://127.0.0.1:4173",
+    colorScheme: "dark",
+  },
+  projects: [
+    { name: "chromium", use: { browserName: "chromium", launchOptions: { executablePath: "C:/Program Files/Google/Chrome/Application/chrome.exe" } } },
+    { name: "firefox", use: { browserName: "firefox" } },
+    { name: "webkit", use: { browserName: "webkit" } }
+  ],
+  webServer: [
+    { command: ".venv\\Scripts\\python.exe -m uvicorn api.index:app --host 127.0.0.1 --port 8000", cwd: "..", url: "http://127.0.0.1:8000/api/v1/health/live", reuseExistingServer: true, timeout: 120_000 },
+    { command: "npm run build && npm run preview -- --host 127.0.0.1 --port 4173", cwd: ".", url: "http://127.0.0.1:4173", reuseExistingServer: true, timeout: 120_000 }
+  ]
+});

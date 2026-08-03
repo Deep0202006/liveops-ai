@@ -1,0 +1,849 @@
+{
+  "model_name": "extra_trees",
+  "model_version": "1.0.0",
+  "dataset_name": "NASA C-MAPSS",
+  "dataset_subset": "FD001",
+  "dataset_fingerprint": "c300ebea1891cb3e0f2bcb735ca3a5481ff6040073cecb33fb01e0485ec03baf",
+  "target_formula": "min(final_failure_cycle - current_cycle, cap)",
+  "target_strategy": "min(max_cycle - cycle, cap)",
+  "rul_unit": "cycles",
+  "rul_cap": 125,
+  "feature_names": [
+    "cycle",
+    "operational_setting_1",
+    "operational_setting_2",
+    "operational_setting_3",
+    "sensor_1",
+    "sensor_2",
+    "sensor_3",
+    "sensor_4",
+    "sensor_5",
+    "sensor_6",
+    "sensor_7",
+    "sensor_8",
+    "sensor_9",
+    "sensor_10",
+    "sensor_11",
+    "sensor_12",
+    "sensor_13",
+    "sensor_14",
+    "sensor_15",
+    "sensor_16",
+    "sensor_17",
+    "sensor_18",
+    "sensor_19",
+    "sensor_20",
+    "sensor_21",
+    "operational_setting_1_mean_5",
+    "operational_setting_1_std_5",
+    "operational_setting_1_delta",
+    "operational_setting_2_mean_5",
+    "operational_setting_2_std_5",
+    "operational_setting_2_delta",
+    "operational_setting_3_mean_5",
+    "operational_setting_3_std_5",
+    "operational_setting_3_delta",
+    "sensor_1_mean_5",
+    "sensor_1_std_5",
+    "sensor_1_delta",
+    "sensor_2_mean_5",
+    "sensor_2_std_5",
+    "sensor_2_delta",
+    "sensor_3_mean_5",
+    "sensor_3_std_5",
+    "sensor_3_delta",
+    "sensor_4_mean_5",
+    "sensor_4_std_5",
+    "sensor_4_delta",
+    "sensor_5_mean_5",
+    "sensor_5_std_5",
+    "sensor_5_delta",
+    "sensor_6_mean_5",
+    "sensor_6_std_5",
+    "sensor_6_delta",
+    "sensor_7_mean_5",
+    "sensor_7_std_5",
+    "sensor_7_delta",
+    "sensor_8_mean_5",
+    "sensor_8_std_5",
+    "sensor_8_delta",
+    "sensor_9_mean_5",
+    "sensor_9_std_5",
+    "sensor_9_delta",
+    "sensor_10_mean_5",
+    "sensor_10_std_5",
+    "sensor_10_delta",
+    "sensor_11_mean_5",
+    "sensor_11_std_5",
+    "sensor_11_delta",
+    "sensor_12_mean_5",
+    "sensor_12_std_5",
+    "sensor_12_delta",
+    "sensor_13_mean_5",
+    "sensor_13_std_5",
+    "sensor_13_delta",
+    "sensor_14_mean_5",
+    "sensor_14_std_5",
+    "sensor_14_delta",
+    "sensor_15_mean_5",
+    "sensor_15_std_5",
+    "sensor_15_delta",
+    "sensor_16_mean_5",
+    "sensor_16_std_5",
+    "sensor_16_delta",
+    "sensor_17_mean_5",
+    "sensor_17_std_5",
+    "sensor_17_delta",
+    "sensor_18_mean_5",
+    "sensor_18_std_5",
+    "sensor_18_delta",
+    "sensor_19_mean_5",
+    "sensor_19_std_5",
+    "sensor_19_delta",
+    "sensor_20_mean_5",
+    "sensor_20_std_5",
+    "sensor_20_delta",
+    "sensor_21_mean_5",
+    "sensor_21_std_5",
+    "sensor_21_delta"
+  ],
+  "removed_features": [
+    "operational_setting_3",
+    "sensor_1",
+    "sensor_5",
+    "sensor_10",
+    "sensor_16",
+    "sensor_18",
+    "sensor_19",
+    "operational_setting_3_mean_5",
+    "operational_setting_3_std_5",
+    "operational_setting_3_delta",
+    "sensor_1_mean_5",
+    "sensor_1_std_5",
+    "sensor_1_delta",
+    "sensor_5_mean_5",
+    "sensor_5_std_5",
+    "sensor_5_delta",
+    "sensor_10_mean_5",
+    "sensor_10_std_5",
+    "sensor_10_delta",
+    "sensor_16_mean_5",
+    "sensor_16_std_5",
+    "sensor_16_delta",
+    "sensor_18_mean_5",
+    "sensor_18_std_5",
+    "sensor_18_delta",
+    "sensor_19_mean_5",
+    "sensor_19_std_5",
+    "sensor_19_delta"
+  ],
+  "feature_configuration": {
+    "rolling_window": 5,
+    "features": "current, trailing mean, trailing std, previous-cycle delta",
+    "causal": true,
+    "variance_threshold": 1e-12
+  },
+  "feature_schema_hash": "93b8d0137f3232d288c0f445d3d80b2f3c2a5bd368a226f100137d72ae4a839d",
+  "split_method": "machine-level train/validation; official dataset test split",
+  "random_seed": 42,
+  "training_machine_count": 80,
+  "validation_machine_count": 20,
+  "test_machine_count": 100,
+  "train_machine_ids": [
+    1,
+    2,
+    4,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    20,
+    21,
+    23,
+    24,
+    27,
+    29,
+    30,
+    31,
+    32,
+    33,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    54,
+    55,
+    56,
+    58,
+    59,
+    61,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    94,
+    95,
+    96,
+    97,
+    99
+  ],
+  "validation_machine_ids": [
+    3,
+    5,
+    19,
+    22,
+    25,
+    26,
+    28,
+    34,
+    43,
+    51,
+    52,
+    53,
+    57,
+    60,
+    62,
+    72,
+    82,
+    93,
+    98,
+    100
+  ],
+  "validation_metrics": {
+    "dummy_median": {
+      "model_name": "dummy_median",
+      "mae": 36.809968847352025,
+      "rmse": 46.310478686114564,
+      "median_absolute_error": 21.0,
+      "r2": -0.2261271191377805,
+      "machine_count": 20,
+      "observation_count": 3852,
+      "near_failure_mae": 91.5,
+      "machine_mae_std": 2.5537347685402434,
+      "error_by_rul_band": {
+        "0-25": 91.5,
+        "26-75": 53.5,
+        "76+": 17.457975986277873
+      },
+      "runtime_seconds": 0.006801399984396994,
+      "artifact_size_bytes": 4505
+    },
+    "ridge": {
+      "model_name": "ridge",
+      "mae": 15.328850260515422,
+      "rmse": 19.020570404992526,
+      "median_absolute_error": 12.952413016070984,
+      "r2": 0.7931649995713239,
+      "machine_count": 20,
+      "observation_count": 3852,
+      "near_failure_mae": 14.3136299479311,
+      "machine_mae_std": 6.362611204539884,
+      "error_by_rul_band": {
+        "0-25": 14.3136299479311,
+        "26-75": 20.823064647394414,
+        "76+": 13.19921911800464
+      },
+      "runtime_seconds": 0.008082699961960316,
+      "artifact_size_bytes": 7193
+    },
+    "extra_trees": {
+      "model_name": "extra_trees",
+      "mae": 9.40240892177224,
+      "rmse": 14.67432044130271,
+      "median_absolute_error": 5.027083333333323,
+      "r2": 0.8768901066925081,
+      "machine_count": 20,
+      "observation_count": 3852,
+      "near_failure_mae": 5.08766826923077,
+      "machine_mae_std": 6.866793202481938,
+      "error_by_rul_band": {
+        "0-25": 5.087668269230769,
+        "26-75": 15.260037500000001,
+        "76+": 7.85268188965123
+      },
+      "runtime_seconds": 0.03145150002092123,
+      "artifact_size_bytes": 29262282
+    }
+  },
+  "candidate_models": [
+    "dummy_median",
+    "ridge",
+    "extra_trees"
+  ],
+  "selection_rule": "Require >=1% validation MAE improvement over Dummy; among models within 5% of best MAE, exclude materially worse near-failure/stability results and prefer simpler, smaller, faster models.",
+  "selection_reason": "Selected extra_trees: it meaningfully beat Dummy and was the simplest acceptable model within 5% of best validation MAE without materially worse near-failure error or stability.",
+  "selected_model": "extra_trees",
+  "final_test_metrics": {
+    "model_name": "extra_trees",
+    "mae": 14.4395,
+    "rmse": 19.854362380987098,
+    "median_absolute_error": 9.39375,
+    "r2": 0.771728157380525,
+    "machine_count": 100,
+    "observation_count": 100,
+    "near_failure_mae": 7.301754385964911,
+    "machine_mae_std": 13.627051966788544,
+    "error_by_rul_band": {
+      "0-25": 7.301754385964913,
+      "26-75": 12.45972222222222,
+      "76+": 17.65233918128655
+    },
+    "runtime_seconds": null,
+    "artifact_size_bytes": null
+  },
+  "prediction_range": {
+    "method": "validation residual quantiles",
+    "lower_quantile": 0.1,
+    "upper_quantile": 0.9,
+    "lower_residual_cycles": -21.746250000000003,
+    "upper_residual_cycles": 11.895416666666671
+  },
+  "important_features": [
+    "cycle",
+    "sensor_11_mean_5",
+    "sensor_9_mean_5",
+    "sensor_14_mean_5",
+    "sensor_21_mean_5"
+  ],
+  "native_feature_importance": {
+    "cycle": 0.1304192946489056,
+    "sensor_11_mean_5": 0.0891160388947788,
+    "sensor_17_mean_5": 0.08610916309157307,
+    "sensor_21_mean_5": 0.08540587231969192,
+    "sensor_15_mean_5": 0.07619686926886025,
+    "sensor_4_mean_5": 0.0702520444236609,
+    "sensor_3_mean_5": 0.06422437783720751,
+    "sensor_20_mean_5": 0.05478876010179851,
+    "sensor_2_mean_5": 0.05251946927771028,
+    "sensor_7_mean_5": 0.04999989883882446,
+    "sensor_12": 0.035999828640598835,
+    "sensor_12_mean_5": 0.026331426974791,
+    "sensor_9_mean_5": 0.022711480820481186,
+    "sensor_14_mean_5": 0.017880600161657514,
+    "sensor_11": 0.016193662652590212,
+    "sensor_2": 0.012359430730320456,
+    "sensor_9": 0.012270173006281214,
+    "sensor_14": 0.011286957457553077,
+    "sensor_13_mean_5": 0.004671534921766986,
+    "sensor_8_mean_5": 0.004227126921297507,
+    "sensor_4": 0.0037388599166407427,
+    "sensor_7_std_5": 0.003202562028861938,
+    "operational_setting_1_std_5": 0.0031749589547175514,
+    "operational_setting_2_mean_5": 0.002767277931361544,
+    "sensor_4_std_5": 0.002726115252895491,
+    "sensor_3_std_5": 0.0026866487177049487,
+    "sensor_9_std_5": 0.0026643233599079933,
+    "sensor_14_std_5": 0.0026434713408548015,
+    "sensor_21_std_5": 0.0025566228272030918,
+    "sensor_8_std_5": 0.002524286373279411,
+    "sensor_12_std_5": 0.002520953650798839,
+    "sensor_13_std_5": 0.002504001196979375,
+    "sensor_15_std_5": 0.002502245851960251,
+    "sensor_17_std_5": 0.002470799098002651,
+    "sensor_20_std_5": 0.0024688454631578162,
+    "sensor_2_std_5": 0.0024463101473729126,
+    "sensor_11_std_5": 0.0024402107190068835,
+    "operational_setting_1_mean_5": 0.0024314536769662657,
+    "operational_setting_2_std_5": 0.0023410285843174813,
+    "sensor_7": 0.0013817278275413617,
+    "sensor_13": 0.001308517490701987,
+    "sensor_8": 0.0012447800714851284,
+    "sensor_15": 0.0012035068326047564,
+    "operational_setting_2": 0.00117956250494976,
+    "sensor_20": 0.0010883038705684902,
+    "sensor_17": 0.0010628410021432577,
+    "sensor_3": 0.0010465769868891314,
+    "operational_setting_1": 0.0010411787446870302,
+    "sensor_21": 0.001019292046793647,
+    "sensor_7_delta": 0.0009087315069396452,
+    "sensor_4_delta": 0.000903619608525094,
+    "operational_setting_2_delta": 0.0008998134062877063,
+    "sensor_21_delta": 0.0008988765062746673,
+    "sensor_12_delta": 0.0008985449966999142,
+    "sensor_9_delta": 0.0008919694737226361,
+    "operational_setting_1_delta": 0.0008852087304658912,
+    "sensor_20_delta": 0.0008827915453047187,
+    "sensor_17_delta": 0.0008734526058419722,
+    "sensor_14_delta": 0.0008576843740183165,
+    "sensor_11_delta": 0.0008542957250946355,
+    "sensor_15_delta": 0.0008521098581287553,
+    "sensor_2_delta": 0.0008366821345955819,
+    "sensor_8_delta": 0.000827063611164344,
+    "sensor_13_delta": 0.0008030590608742936,
+    "sensor_3_delta": 0.0007855875821846527,
+    "sensor_6_std_5": 0.00040454162907478,
+    "sensor_6_mean_5": 0.0003403227748120876,
+    "sensor_6": 3.170838647540536e-05,
+    "sensor_6_delta": 1.2663022811259738e-05
+  },
+  "training_ranges": {
+    "cycle": [
+      1.0,
+      362.0
+    ],
+    "operational_setting_1": [
+      -0.0087,
+      0.0087
+    ],
+    "operational_setting_2": [
+      -0.0006,
+      0.0006
+    ],
+    "operational_setting_3": [
+      100.0,
+      100.0
+    ],
+    "sensor_1": [
+      518.67,
+      518.67
+    ],
+    "sensor_2": [
+      641.21,
+      644.53
+    ],
+    "sensor_3": [
+      1571.04,
+      1616.91
+    ],
+    "sensor_4": [
+      1382.25,
+      1441.49
+    ],
+    "sensor_5": [
+      14.62,
+      14.62
+    ],
+    "sensor_6": [
+      21.6,
+      21.61
+    ],
+    "sensor_7": [
+      549.85,
+      556.06
+    ],
+    "sensor_8": [
+      2387.9,
+      2388.56
+    ],
+    "sensor_9": [
+      9021.73,
+      9244.59
+    ],
+    "sensor_10": [
+      1.3,
+      1.3
+    ],
+    "sensor_11": [
+      46.85,
+      48.53
+    ],
+    "sensor_12": [
+      518.69,
+      523.38
+    ],
+    "sensor_13": [
+      2387.88,
+      2388.56
+    ],
+    "sensor_14": [
+      8099.94,
+      8293.72
+    ],
+    "sensor_15": [
+      8.3249,
+      8.5848
+    ],
+    "sensor_16": [
+      0.03,
+      0.03
+    ],
+    "sensor_17": [
+      388.0,
+      400.0
+    ],
+    "sensor_18": [
+      2388.0,
+      2388.0
+    ],
+    "sensor_19": [
+      100.0,
+      100.0
+    ],
+    "sensor_20": [
+      38.14,
+      39.43
+    ],
+    "sensor_21": [
+      22.8942,
+      23.6184
+    ],
+    "operational_setting_1_mean_5": [
+      -0.0065,
+      0.0045
+    ],
+    "operational_setting_1_std_5": [
+      0.0,
+      0.004902489163680018
+    ],
+    "operational_setting_1_delta": [
+      -0.011800000000000001,
+      0.0121
+    ],
+    "operational_setting_2_mean_5": [
+      -0.0006,
+      0.0006
+    ],
+    "operational_setting_2_std_5": [
+      0.0,
+      0.000466476151587624
+    ],
+    "operational_setting_2_delta": [
+      -0.001,
+      0.001
+    ],
+    "operational_setting_3_mean_5": [
+      100.0,
+      100.0
+    ],
+    "operational_setting_3_std_5": [
+      0.0,
+      0.0
+    ],
+    "operational_setting_3_delta": [
+      0.0,
+      0.0
+    ],
+    "sensor_1_mean_5": [
+      518.67,
+      518.67
+    ],
+    "sensor_1_std_5": [
+      0.0,
+      0.0
+    ],
+    "sensor_1_delta": [
+      0.0,
+      0.0
+    ],
+    "sensor_2_mean_5": [
+      641.45,
+      644.02
+    ],
+    "sensor_2_std_5": [
+      0.0,
+      0.7011533355834871
+    ],
+    "sensor_2_delta": [
+      -1.75,
+      1.5699999999999363
+    ],
+    "sensor_3_mean_5": [
+      1573.02,
+      1608.0700000000002
+    ],
+    "sensor_3_std_5": [
+      0.0,
+      9.321168167134747
+    ],
+    "sensor_3_delta": [
+      -23.47999999999979,
+      23.11999999999989
+    ],
+    "sensor_4_mean_5": [
+      1387.38,
+      1432.9840000000002
+    ],
+    "sensor_4_std_5": [
+      0.0,
+      10.789999999999964
+    ],
+    "sensor_4_delta": [
+      -22.350000000000136,
+      25.00999999999999
+    ],
+    "sensor_5_mean_5": [
+      14.62,
+      14.62
+    ],
+    "sensor_5_std_5": [
+      0.0,
+      0.0
+    ],
+    "sensor_5_delta": [
+      0.0,
+      0.0
+    ],
+    "sensor_6_mean_5": [
+      21.6,
+      21.61
+    ],
+    "sensor_6_std_5": [
+      0.0,
+      0.004999999999999006
+    ],
+    "sensor_6_delta": [
+      -0.00999999999999801,
+      0.00999999999999801
+    ],
+    "sensor_7_mean_5": [
+      550.8100000000001,
+      555.37
+    ],
+    "sensor_7_std_5": [
+      0.0,
+      1.1026332119068598
+    ],
+    "sensor_7_delta": [
+      -2.230000000000018,
+      2.7000000000000455
+    ],
+    "sensor_8_mean_5": [
+      2387.92,
+      2388.326
+    ],
+    "sensor_8_std_5": [
+      0.0,
+      0.1795104453821525
+    ],
+    "sensor_8_delta": [
+      -0.17000000000007276,
+      0.34999999999990905
+    ],
+    "sensor_9_mean_5": [
+      9027.652,
+      9223.844000000001
+    ],
+    "sensor_9_std_5": [
+      0.0,
+      11.354397562378123
+    ],
+    "sensor_9_delta": [
+      -22.11999999999898,
+      24.0
+    ],
+    "sensor_10_mean_5": [
+      1.3,
+      1.3
+    ],
+    "sensor_10_std_5": [
+      0.0,
+      0.0
+    ],
+    "sensor_10_delta": [
+      0.0,
+      0.0
+    ],
+    "sensor_11_mean_5": [
+      46.93,
+      48.274
+    ],
+    "sensor_11_std_5": [
+      0.0,
+      0.2211424880026627
+    ],
+    "sensor_11_delta": [
+      -0.5899999999999963,
+      0.5500000000000043
+    ],
+    "sensor_12_mean_5": [
+      519.224,
+      522.97
+    ],
+    "sensor_12_std_5": [
+      0.0,
+      0.7202943842625584
+    ],
+    "sensor_12_delta": [
+      -2.0100000000001046,
+      1.7899999999999636
+    ],
+    "sensor_13_mean_5": [
+      2387.93,
+      2388.3379999999997
+    ],
+    "sensor_13_std_5": [
+      0.0,
+      0.19683495624294836
+    ],
+    "sensor_13_delta": [
+      -0.19000000000005457,
+      0.3500000000003638
+    ],
+    "sensor_14_mean_5": [
+      8103.466,
+      8281.151999999998
+    ],
+    "sensor_14_std_5": [
+      0.0,
+      8.87249096930904
+    ],
+    "sensor_14_delta": [
+      -18.779999999999745,
+      17.550000000000182
+    ],
+    "sensor_15_mean_5": [
+      8.3303,
+      8.54242
+    ],
+    "sensor_15_std_5": [
+      0.0,
+      0.04789181140863194
+    ],
+    "sensor_15_delta": [
+      -0.12489999999999846,
+      0.11339999999999861
+    ],
+    "sensor_16_mean_5": [
+      0.03,
+      0.03
+    ],
+    "sensor_16_std_5": [
+      0.0,
+      0.0
+    ],
+    "sensor_16_delta": [
+      0.0,
+      0.0
+    ],
+    "sensor_17_mean_5": [
+      390.0,
+      397.6
+    ],
+    "sensor_17_std_5": [
+      0.0,
+      2.227105745132017
+    ],
+    "sensor_17_delta": [
+      -6.0,
+      6.0
+    ],
+    "sensor_18_mean_5": [
+      2388.0,
+      2388.0
+    ],
+    "sensor_18_std_5": [
+      0.0,
+      0.0
+    ],
+    "sensor_18_delta": [
+      0.0,
+      0.0
+    ],
+    "sensor_19_mean_5": [
+      100.0,
+      100.0
+    ],
+    "sensor_19_std_5": [
+      0.0,
+      0.0
+    ],
+    "sensor_19_delta": [
+      0.0,
+      0.0
+    ],
+    "sensor_20_mean_5": [
+      38.326,
+      39.27
+    ],
+    "sensor_20_std_5": [
+      0.0,
+      0.22999999999999865
+    ],
+    "sensor_20_delta": [
+      -0.529999999999994,
+      0.5899999999999963
+    ],
+    "sensor_21_mean_5": [
+      23.011400000000002,
+      23.5349
+    ],
+    "sensor_21_std_5": [
+      0.0,
+      0.1486451263916828
+    ],
+    "sensor_21_delta": [
+      -0.34569999999999723,
+      0.3406999999999982
+    ]
+  },
+  "training_seconds": 25.689185700030066,
+  "training_date_utc": "2026-08-02T13:25:55.983134+00:00",
+  "python_version": "3.14.2",
+  "library_versions": {
+    "pandas": "3.0.5",
+    "scikit_learn": "1.9.0"
+  },
+  "training_config": {
+    "random_seed": 42,
+    "validation_fraction": 0.2,
+    "rul_cap": 125,
+    "rolling_window": 5,
+    "minimum_history": 5,
+    "validation_residual_lower_quantile": 0.1,
+    "validation_residual_upper_quantile": 0.9,
+    "near_failure_threshold": 25,
+    "variance_threshold": 1e-12,
+    "rul_bands": [
+      25,
+      75
+    ],
+    "extra_trees_estimators": 40,
+    "permutation_repeats": 3,
+    "dummy_min_relative_improvement": 0.01,
+    "materially_similar_mae_fraction": 0.05,
+    "acceptable_secondary_degradation_fraction": 0.1
+  },
+  "training_data_kind": "real",
+  "demo_only": false,
+  "metrics_publishable": true,
+  "scientific_validity": "authorized-run-to-failure-dataset",
+  "maintenance_thresholds": {
+    "urgent_at_or_below": 25.0,
+    "plan_at_or_below": 50.0,
+    "monitor_at_or_below": 80.0
+  }
+}
