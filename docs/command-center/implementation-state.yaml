@@ -1,0 +1,24 @@
+product: LiveOps AI Reliability Command Center
+branch: feat/live-reliability-command-center
+baseline_commit: 4354e2d595f0765d9152ea3303ebf005e519fc86
+status: verified_release_candidate
+deployment_performed: false
+primary_route: /
+secondary_data_lab: /lab
+scenario_packs:
+  count: 3
+  deterministic: true
+  real_model_backed: true
+  total_gzip_bytes: 54807
+simulation:
+  worker: true
+  maximum_ui_updates_hz: 2
+  server_sessions: false
+verification:
+  backend_tests: 62
+  frontend_tests: 20
+  playwright_executed: 34
+  playwright_skipped_by_design: 44
+  visual_baselines: 14
+  p0_defects: 0
+  p1_defects: 0

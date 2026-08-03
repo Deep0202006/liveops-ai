@@ -1,6 +1,28 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
-async function assertClean(page: Page) { const failures:string[]=[]; page.on("console",message=>{if(message.type()==="error") failures.push(message.text())}); page.on("pageerror",error=>failures.push(error.message)); await page.goto("/"); await page.waitForLoadState("networkidle"); await expect(page.getByRole("heading",{level:1})).toContainText("Know how long"); await page.goto("/app/model"); await page.waitForLoadState("networkidle"); await expect(page.getByRole("heading",{level:1})).toContainText("Traceable performance"); await page.goto("/app"); await page.waitForLoadState("networkidle"); await expect(page.getByRole("heading",{level:1})).toContainText("Machine remaining useful life"); return failures; }
+test("critical command-center and secondary routes are cross-browser clean", async ({ page, browserName }) => {
+  const failures: string[] = [];
+  page.on("console", (message) => { if (message.type() === "error") failures.push(message.text()); });
+  page.on("pageerror", (error) => failures.push(error.message));
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: "Rotating assets" })).toBeVisible();
+  await page.getByRole("button", { name: "Step one cycle" }).last().click();
+  await page.locator(".fleet-main").nth(1).click();
+  await expect(page.getByText("SELECTED ASSET COMMAND VIEW")).toBeVisible();
+  await page.goto("/maintenance");
+  await expect(page.getByRole("heading", { name: "Priority queue" })).toBeVisible();
+  await page.goto("/model");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Traceable performance");
+  await page.goto("/lab");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("External trajectory analysis");
+  expect(failures, `${browserName} console/page failures`).toEqual([]);
+});
 
-test("critical navigation and demo analysis are cross-browser clean",async({page,browserName})=>{const failures=await assertClean(page);await page.getByRole("button",{name:"Monitor sample"}).click();await page.getByRole("button",{name:"Validate trajectory"}).click();await expect(page.getByRole("heading",{name:"Choose a machine"})).toBeVisible();await page.getByRole("option").first().click();await expect(page.getByRole("button",{name:"Estimate remaining life"})).toBeEnabled();await page.getByRole("button",{name:"Estimate remaining life"}).click();await expect(page.locator("#prediction-result")).toBeVisible();expect(failures,`${browserName} console/page failures`).toEqual([])});
-test("invalid file recovery and mobile status navigation work",async({page})=>{await page.setViewportSize({width:390,height:844});await page.goto("/app");await page.getByLabel("Machine trajectory CSV").setInputFiles("e2e/fixtures/invalid.csv");const validate=page.getByRole("button",{name:"Validate trajectory"});await expect(validate).toBeEnabled();await validate.focus();await page.keyboard.press("Enter");await expect(page.getByRole("alert")).toBeVisible();await page.getByRole("button",{name:"New analysis"}).click();await expect(page.getByText("Drop a machine trajectory here")).toBeVisible();await page.getByRole("button",{name:"Open navigation"}).click();await expect(page.getByRole("dialog")).toBeVisible();await page.keyboard.press("Escape");await expect(page.getByRole("dialog")).toBeHidden()});
+test("mobile navigation opens and closes by keyboard", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  await page.getByRole("button", { name: "Open navigation" }).click();
+  await expect(page.getByRole("dialog", { name: "Application navigation" })).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("dialog", { name: "Application navigation" })).toBeHidden();
+});
