@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./styles/index.css";
 import "./styles/product.css";
 import "./styles/accessibility.css";
+import "./styles/command-center.css";
 import App from "./app/App";
 
 const queryClient = new QueryClient({ defaultOptions: { queries: { refetchOnReconnect: true }, mutations: { retry: false } } });

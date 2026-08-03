@@ -1,0 +1,8 @@
+import { describe,expect,it } from "vitest";
+import { calculateSnapshot } from "../selectors";
+import type { ScenarioPack } from "../contracts";
+const sample=(step:number,rul:number,status:"HEALTHY"|"MONITOR"|"PLAN_MAINTENANCE"|"CRITICAL")=>({step,source_cycle:step+5,sensors:{sensor_2:1},predicted_rul:rul,lower_bound:rul-1,upper_bound:rul+1,maintenance_status:status,rul_change:-1,important_features:[],warnings:[],model_version:"1"});
+const pack={timeline:{start:0,end:1,default_start:0,available_speeds:[1]},assets:[{asset_id:"RT-01",source_machine_id:1,display_name:"Unit",samples:[sample(0,90,"HEALTHY"),sample(1,20,"CRITICAL")]}],events:[{id:"e",cycle:1,asset_id:"RT-01",type:"CRITICAL_RISK",severity:"critical",message:"risk"}]} as unknown as ScenarioPack;
+describe("fleet selectors",()=>{it("seeks deterministically without future events",()=>{expect(calculateSnapshot(pack,0,false,1).activeAlerts).toBe(0);expect(calculateSnapshot(pack,1,false,1).activeAlerts).toBe(1);expect(calculateSnapshot(pack,0,false,1)).toEqual(calculateSnapshot(pack,0,false,1))})});
+
+describe("accelerated worker-selector soak",()=>{it("replays thirty simulated minutes without accumulating or duplicating events",()=>{let previous=calculateSnapshot(pack,0,true,20);for(let tick=0;tick<3_600;tick+=1){const step=tick%2;const current=calculateSnapshot(pack,step,true,20);expect(current.events.length).toBeLessThanOrEqual(pack.events.length);expect(new Set(current.events.map(event=>event.id)).size).toBe(current.events.length);previous=current}expect(previous.step).toBe(1);expect(calculateSnapshot(pack,0,false,1)).toEqual(calculateSnapshot(pack,0,false,1))})});
