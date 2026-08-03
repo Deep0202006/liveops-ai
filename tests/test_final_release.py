@@ -18,6 +18,13 @@ def test_vercel_entry_imports_without_streamlit_or_raw_data(monkeypatch):
     assert "train_model" not in source and "download" not in source and "streamlit" not in source
 
 
+def test_vercel_entry_adds_src_before_importing_application_package():
+    source = (ROOT / "api/index.py").read_text(encoding="utf-8")
+    path_setup = source.index("sys.path.insert")
+    package_import = source.index("from rul_predictor.api")
+    assert path_setup < package_import
+
+
 def test_real_artifact_is_integral_and_compact():
     pipeline, metadata, features = load_artifact(ROOT / "artifacts/real", expected_mode=ArtifactMode.REAL)
     assert pipeline is not None and features
