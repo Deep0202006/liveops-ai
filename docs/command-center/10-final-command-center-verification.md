@@ -92,7 +92,7 @@ Charts have textual summaries; status uses text plus color; the mobile navigatio
 
 ## Deployment readiness
 
-The implementation is ready for a separate authorized deployment review. No deployment, Vercel change, remote push, database, WebSocket, or server-side simulation session was created in this work.
+The implemented core is stable, but the locked acceptance gate is not yet complete. Three product-scope gaps remain: the alert feed lacks its three requested filters; pinned assets do not yet open a dedicated comparison visualization; and the soak test accelerates selector ticks rather than recording browser memory for 30 wall-clock minutes. No deployment, Vercel change, remote push, database, WebSocket, or server-side simulation session was created.
 
 PRODUCT: LIVEOPS AI RELIABILITY COMMAND CENTER  
 PRIMARY EXPERIENCE: LIVE FLEET SIMULATION  
@@ -100,7 +100,7 @@ CSV UPLOAD: SECONDARY DATA LAB
 DATA SOURCE: NASA FD001  
 MODEL: REAL VERIFIED RUL MODEL  
 SIMULATION: DETERMINISTIC AND MODEL-BACKED  
-COMMAND CENTER: COMPLETE  
+COMMAND CENTER: CORE VERIFIED; ACCEPTANCE GAPS REMAIN  
 FLEET MONITORING: VERIFIED  
 LIVE TELEMETRY REPLAY: VERIFIED  
 LIVE RUL TRACKING: VERIFIED  
@@ -109,11 +109,11 @@ MAINTENANCE PRIORITIZATION: VERIFIED
 TIME CONDUCTOR: VERIFIED  
 SIMULATION CONTROLS: VERIFIED  
 WEB WORKER: VERIFIED  
-30-MINUTE ACCELERATED SOAK: PASS  
+30-MINUTE ACCELERATED SELECTOR SOAK: PASS  
 CROSS-BROWSER QA: PASS  
 ACCESSIBILITY: PASS  
 PERFORMANCE BUDGETS: PASS  
 KNOWN P0 DEFECTS: NONE  
-KNOWN P1 DEFECTS: NONE  
+KNOWN P1 DEFECTS: 3  
 VERCEL DEPLOYMENT: NOT PERFORMED  
-GREEN SIGNAL FOR DEPLOYMENT: YES
+GREEN SIGNAL FOR DEPLOYMENT: NO
