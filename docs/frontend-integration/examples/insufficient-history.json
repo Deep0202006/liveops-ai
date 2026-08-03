@@ -1,0 +1,6 @@
+{
+  "code": "INSUFFICIENT_HISTORY",
+  "message": "At least 5 observations are required for prediction.",
+  "recoverable": true,
+  "safe_details": {}
+}

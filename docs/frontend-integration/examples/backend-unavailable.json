@@ -1,0 +1,11 @@
+{
+  "contract_version": "1.0",
+  "backend_state": "SOFTWARE_READY",
+  "dataset_state": "REAL_DATASET_REQUIRED",
+  "model_state": "MODEL_NOT_TRAINED",
+  "artifact_state": "ARTIFACT_UNAVAILABLE",
+  "metrics_state": "FINAL_METRICS_UNAVAILABLE",
+  "prediction_available": false,
+  "demo_only": false,
+  "message": "Model artifact is incomplete; missing: model.joblib, metadata.json, feature_schema.json, evaluation.json, manifest.json"
+}

@@ -1,0 +1,77 @@
+{
+  "state": "VERIFIED",
+  "validation_models": {
+    "dummy_median": {
+      "model_name": "dummy_median",
+      "mae": 36.809968847352025,
+      "rmse": 46.310478686114564,
+      "median_absolute_error": 21.0,
+      "r2": -0.2261271191377805,
+      "machine_count": 20,
+      "observation_count": 3852,
+      "near_failure_mae": 91.5,
+      "machine_mae_std": 2.5537347685402434,
+      "error_by_rul_band": {
+        "0-25": 91.5,
+        "26-75": 53.5,
+        "76+": 17.457975986277873
+      },
+      "runtime_seconds": 0.006801399984396994,
+      "artifact_size_bytes": 4505
+    },
+    "ridge": {
+      "model_name": "ridge",
+      "mae": 15.328850260515422,
+      "rmse": 19.020570404992526,
+      "median_absolute_error": 12.952413016070984,
+      "r2": 0.7931649995713239,
+      "machine_count": 20,
+      "observation_count": 3852,
+      "near_failure_mae": 14.3136299479311,
+      "machine_mae_std": 6.362611204539884,
+      "error_by_rul_band": {
+        "0-25": 14.3136299479311,
+        "26-75": 20.823064647394414,
+        "76+": 13.19921911800464
+      },
+      "runtime_seconds": 0.008082699961960316,
+      "artifact_size_bytes": 7193
+    },
+    "extra_trees": {
+      "model_name": "extra_trees",
+      "mae": 9.40240892177224,
+      "rmse": 14.67432044130271,
+      "median_absolute_error": 5.027083333333323,
+      "r2": 0.8768901066925081,
+      "machine_count": 20,
+      "observation_count": 3852,
+      "near_failure_mae": 5.08766826923077,
+      "machine_mae_std": 6.866793202481938,
+      "error_by_rul_band": {
+        "0-25": 5.087668269230769,
+        "26-75": 15.260037500000001,
+        "76+": 7.85268188965123
+      },
+      "runtime_seconds": 0.03145150002092123,
+      "artifact_size_bytes": 29262282
+    }
+  },
+  "final_test": {
+    "model_name": "extra_trees",
+    "mae": 14.4395,
+    "rmse": 19.854362380987098,
+    "median_absolute_error": 9.39375,
+    "r2": 0.771728157380525,
+    "machine_count": 100,
+    "observation_count": 100,
+    "near_failure_mae": 7.301754385964911,
+    "machine_mae_std": 13.627051966788544,
+    "error_by_rul_band": {
+      "0-25": 7.301754385964913,
+      "26-75": 12.45972222222222,
+      "76+": 17.65233918128655
+    },
+    "runtime_seconds": null,
+    "artifact_size_bytes": null
+  }
+}

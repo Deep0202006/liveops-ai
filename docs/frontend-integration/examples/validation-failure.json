@@ -1,0 +1,6 @@
+{
+  "code": "INVALID_SCHEMA",
+  "message": "Required column 'sensor_1' is missing.",
+  "recoverable": true,
+  "safe_details": {}
+}

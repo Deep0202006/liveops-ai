@@ -1,0 +1,61 @@
+{
+  "metrics_state": "DEMO_METRICS_NOT_PUBLISHABLE",
+  "final_test": null,
+  "validation_models": [
+    {
+      "model_name": "dummy_median",
+      "mae": 26.886666666666667,
+      "rmse": 32.07896507058792,
+      "median_absolute_error": 25.0,
+      "r2": -0.00044076886924782066,
+      "machine_count": 3,
+      "observation_count": 300,
+      "near_failure_mae": 39.5,
+      "machine_mae_std": 4.750746388863045,
+      "error_by_rul_band": {
+        "0-25": 39.5,
+        "26-75": 12.54,
+        "76+": 43.111111111111114
+      },
+      "runtime_seconds": 0.002656599972397089,
+      "artifact_size_bytes": 4505
+    },
+    {
+      "model_name": "ridge",
+      "mae": 8.611963860107592,
+      "rmse": 10.911823023888724,
+      "median_absolute_error": 6.230401213524313,
+      "r2": 0.8842435201832247,
+      "machine_count": 3,
+      "observation_count": 300,
+      "near_failure_mae": 2.970105908288505,
+      "machine_mae_std": 0.5864108369707943,
+      "error_by_rul_band": {
+        "0-25": 2.970105908288505,
+        "26-75": 7.359208272947144,
+        "76+": 17.333884114495877
+      },
+      "runtime_seconds": 0.003809699905104935,
+      "artifact_size_bytes": 8025
+    },
+    {
+      "model_name": "extra_trees",
+      "mae": 10.646307870370372,
+      "rmse": 12.625759837698125,
+      "median_absolute_error": 9.519097222222221,
+      "r2": 0.845023541521793,
+      "machine_count": 3,
+      "observation_count": 300,
+      "near_failure_mae": 3.0124643874643873,
+      "machine_mae_std": 1.9949822007459415,
+      "error_by_rul_band": {
+        "0-25": 3.0124643874643877,
+        "26-75": 10.99414351851852,
+        "76+": 18.19164737654321
+      },
+      "runtime_seconds": 0.009680400020442903,
+      "artifact_size_bytes": 2826522
+    }
+  ],
+  "message": "FINAL_METRICS_UNAVAILABLE"
+}
