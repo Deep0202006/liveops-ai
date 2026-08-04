@@ -1,0 +1,37 @@
+:root {
+  --landing-canvas: #e5e8e8;
+  --landing-canvas-warm: #ecedeb;
+  --landing-surface: rgba(255, 255, 255, 0.56);
+  --landing-surface-elevated: rgba(249, 251, 250, 0.78);
+  --landing-border: rgba(255, 255, 255, 0.76);
+  --landing-border-muted: rgba(47, 61, 68, 0.1);
+  --landing-ink: #182025;
+  --landing-secondary: #55636b;
+  --landing-tertiary: #7c878d;
+  --command-canvas: #151c21;
+  --command-canvas-raised: #192127;
+  --command-surface-1: #1d262c;
+  --command-surface-2: #232e35;
+  --command-surface-3: #2a363e;
+  --command-surface-soft: rgba(35, 46, 53, 0.82);
+  --command-border: rgba(222, 237, 240, 0.105);
+  --command-border-strong: rgba(226, 240, 243, 0.17);
+  --command-text: #eef3f3;
+  --command-secondary: #a8b4ba;
+  --command-tertiary: #77858c;
+  --signal-primary: #68c8b8;
+  --signal-primary-soft: rgba(104, 200, 184, 0.16);
+  --signal-blue: #75a8d7;
+  --signal-blue-soft: rgba(117, 168, 215, 0.15);
+  --signal-amber: #d0a462;
+  --signal-amber-soft: rgba(208, 164, 98, 0.15);
+  --signal-critical: #da7377;
+  --signal-critical-soft: rgba(218, 115, 119, 0.15);
+  --signal-healthy: #76c495;
+  --signal-neutral: #98a7af;
+  --radius-control: 12px;
+  --radius-compact: 10px;
+  --radius-panel: 16px;
+  --radius-hero: 28px;
+  --radius-modal: 20px;
+}
