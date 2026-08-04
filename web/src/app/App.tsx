@@ -6,6 +6,7 @@ import CommandCenterPage from "../routes/CommandCenterPage";
 
 const ModelEvidencePage = lazy(() => import("../routes/ModelEvidencePage"));
 const DataLabPage = lazy(() => import("../routes/WorkspacePage"));
+const ComparePage = lazy(() => import("../routes/ComparePage"));
 
 export default function App() {
   const location = useLocation();
@@ -13,6 +14,7 @@ export default function App() {
     <Route path="/" element={<CommandCenterPage />} />
     <Route path="/asset/:assetId" element={<CommandCenterPage />} />
     <Route path="/maintenance" element={<CommandCenterPage maintenanceOnly />} />
+    <Route path="/compare" element={<ComparePage />} />
     <Route path="/model" element={<ModelEvidencePage />} />
     <Route path="/lab" element={<DataLabPage />} />
     <Route path="/app" element={<DataLabPage />} />
