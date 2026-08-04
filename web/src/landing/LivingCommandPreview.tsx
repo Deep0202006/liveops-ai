@@ -24,9 +24,16 @@ export default function LivingCommandPreview() {
   const root = useRef<HTMLDivElement>(null);
   const simulationRef = useRef(simulation);
   const resumeWhenVisible = useRef(false);
+  const previewVisible = useRef(false);
+  const autoStartPending = useRef(true);
   const [display, setDisplay] = useState(simulation.snapshot);
   const latest = useRef(simulation.snapshot);
   useEffect(() => { latest.current = simulation.snapshot; simulationRef.current = simulation; }, [simulation]);
+  useEffect(() => {
+    if (!autoStartPending.current || !previewVisible.current || !simulation.snapshot) return;
+    autoStartPending.current = false;
+    if (!simulation.snapshot.playing) simulation.play();
+  }, [simulation]);
   useEffect(() => {
     const timer = window.setInterval(() => setDisplay(latest.current), 1000);
     return () => window.clearInterval(timer);
@@ -35,6 +42,7 @@ export default function LivingCommandPreview() {
     const element = root.current;
     if (!element) return;
     const observer = new IntersectionObserver(([entry]) => {
+      previewVisible.current = entry.isIntersecting;
       const snapshot = latest.current;
       if (!entry.isIntersecting && snapshot?.playing) { resumeWhenVisible.current = true; simulationRef.current.pause(); }
       else if (entry.isIntersecting && resumeWhenVisible.current && !document.hidden) { resumeWhenVisible.current = false; simulationRef.current.play(); }
