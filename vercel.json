@@ -13,6 +13,12 @@
     { "source": "/api/(.*)", "destination": "/api/index.py" },
     { "source": "/docs", "destination": "/api/index.py" },
     { "source": "/openapi.json", "destination": "/api/index.py" },
+    { "source": "/command", "destination": "/index.html" },
+    { "source": "/asset/(.*)", "destination": "/index.html" },
+    { "source": "/maintenance", "destination": "/index.html" },
+    { "source": "/compare", "destination": "/index.html" },
+    { "source": "/model", "destination": "/index.html" },
+    { "source": "/lab", "destination": "/index.html" },
     { "source": "/app/(.*)", "destination": "/index.html" },
     { "source": "/app", "destination": "/index.html" }
   ],

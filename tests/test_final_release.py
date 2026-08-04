@@ -33,6 +33,14 @@ def test_real_artifact_is_integral_and_compact():
     assert (ROOT / "artifacts/real/model.joblib").stat().st_size < 50 * 1024 * 1024
 
 
+def test_real_artifact_json_bytes_are_portable_to_vercel():
+    artifact_directory = ROOT / "artifacts/real"
+    for artifact in artifact_directory.glob("*.json"):
+        assert b"\r\n" not in artifact.read_bytes(), f"{artifact.name} must use canonical LF bytes"
+    attributes = (ROOT / ".gitattributes").read_text(encoding="utf-8")
+    assert "artifacts/real/*.json text eol=lf" in attributes
+
+
 @pytest.mark.skipif(not (ROOT / "data/raw/train_FD001.txt").is_file(), reason="authorized raw FD001 is not required at runtime")
 def test_official_fd001_shapes_and_truth_alignment():
     train = load_cmapss_trajectory(ROOT / "data/raw/train_FD001.txt")

@@ -1,0 +1,3 @@
+import type { Catalog, ScenarioPack } from "./contracts";
+export async function loadCatalog(signal?:AbortSignal){const response=await fetch("/simulations/catalog.json",{signal});if(!response.ok)throw new Error("Simulation catalog unavailable");return await response.json() as Catalog}
+export async function loadScenario(url:string,signal?:AbortSignal){const response=await fetch(url,{signal});if(!response.ok)throw new Error("Scenario pack unavailable");const pack=await response.json() as ScenarioPack;if(!pack.simulation_only||pack.source.dataset_subset!=="FD001")throw new Error("Invalid simulation pack");return pack}

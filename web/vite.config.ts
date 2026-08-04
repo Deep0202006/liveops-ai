@@ -11,5 +11,5 @@ export default defineConfig({
   build: {
     sourcemap: true,
   },
-  test: { environment: "jsdom", globals: true, setupFiles: ["./src/test/setup.ts"], exclude: ["e2e/**", "e2e-real/**", "node_modules/**", "dist/**"] },
+  test: { environment: "jsdom", globals: true, setupFiles: ["./src/test/setup.ts"], exclude: ["e2e/**", "e2e-real/**", "tests/soak/**", "tests/stability/**", "node_modules/**", "dist/**"] },
 });

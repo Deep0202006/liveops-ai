@@ -3,7 +3,7 @@ import { join, relative } from "node:path";
 
 const root = new URL("..", import.meta.url).pathname.replace(/^\/(.:)/, "$1");
 const packageJson = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
-const allowed = new Set(["react","react-dom","@tanstack/react-query","motion","@visx/axis","@visx/event","@visx/scale","@visx/shape","@visx/tooltip","lucide-react","clsx","tailwind-merge","class-variance-authority","react-router-dom","geist"]);
+const allowed = new Set(["react","react-dom","@tanstack/react-query","motion","uplot","lucide-react","clsx","tailwind-merge","class-variance-authority","react-router-dom","geist"]);
 const forbiddenDependencies = Object.keys(packageJson.dependencies).filter((name) => !allowed.has(name));
 if (forbiddenDependencies.length) throw new Error(`Forbidden runtime dependencies: ${forbiddenDependencies.join(", ")}`);
 const files = [];

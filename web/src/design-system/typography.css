@@ -1,0 +1,18 @@
+.alloy-landing {
+  font-family: "Geist", "Segoe UI", sans-serif;
+  color: var(--landing-ink);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.alloy-landing code,
+.alloy-landing time,
+.alloy-landing .alloy-metric {
+  font-family: "Geist Mono", "Cascadia Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.alloy-landing h1 { font-size: clamp(2.75rem, 5.4vw, 5.4rem); line-height: 0.98; letter-spacing: -0.06em; font-weight: 560; }
+.alloy-landing h2 { font-size: clamp(2rem, 3.4vw, 3.4rem); line-height: 1.04; letter-spacing: -0.045em; font-weight: 540; }
+.alloy-landing h3 { font-size: clamp(1rem, 1.25vw, 1.2rem); line-height: 1.2; letter-spacing: -0.02em; font-weight: 600; }
+.alloy-label { font-size: 0.75rem; letter-spacing: 0.09em; text-transform: uppercase; font-weight: 650; }
