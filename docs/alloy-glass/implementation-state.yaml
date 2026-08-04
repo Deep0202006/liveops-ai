@@ -1,7 +1,7 @@
 schema_version: "1.0"
 product: "LiveOps AI Reliability Command Center"
 visual_system: "Alloy Glass"
-phase: "anchor-surfaces-verified"
+phase: "local-release-verified"
 repository_facts:
   starting_command_route: "/"
   current_command_route: "/command"
@@ -31,10 +31,10 @@ states:
   anchor_landing: complete
   anchor_command_center: complete
   anchor_conformance_gate: pass
-  implementation: in_progress
-  local_verification: not_run
-  preview_verification: not_run
-  production_verification: not_run
+  implementation: complete
+  local_verification: pass
+  preview_verification: blocked
+  production_verification: blocked
 locked_constraints:
   model_or_simulation_changes: forbidden
   glass_variants: 3
