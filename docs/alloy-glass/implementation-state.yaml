@@ -1,0 +1,45 @@
+schema_version: "1.0"
+product: "LiveOps AI Reliability Command Center"
+visual_system: "Alloy Glass"
+phase: "phase-0-design-contract"
+repository_facts:
+  current_command_route: "/"
+  target_landing_route: "/"
+  target_command_route: "/command"
+  asset_route: "/asset/:assetId"
+  maintenance_route: "/maintenance"
+  comparison_route: "/compare"
+  model_evidence_route: "/model"
+  data_lab_route: "/lab"
+  simulation_provider_scope: "application"
+  pins_provider_scope: "application"
+  chart_library: "uPlot"
+  motion_dependency: "motion@^12.0.6"
+states:
+  repository_identity_verified: true
+  phase_0_audit: in_progress
+  layout_contract: complete
+  token_contract: complete
+  glass_contract: complete
+  motion_contract: complete
+  component_treatment_map: complete
+  landing_storyboard: complete
+  command_storyboard: complete
+  responsive_plan: complete
+  test_plan: complete
+  anchor_landing: not_started
+  anchor_command_center: not_started
+  anchor_conformance_gate: not_run
+  implementation: not_started
+  local_verification: not_run
+  preview_verification: not_run
+  production_verification: not_run
+locked_constraints:
+  model_or_simulation_changes: forbidden
+  glass_variants: 3
+  ui_snapshot_max_hz: 2
+  additional_chart_library: forbidden
+  additional_motion_library: forbidden
+  purple: forbidden
+  webgl_video_lottie: forbidden
+unresolved_items: []
