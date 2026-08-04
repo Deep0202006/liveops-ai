@@ -18,3 +18,57 @@
 @media(prefers-reduced-motion:reduce){.cc-horizon-track>i,.cc-horizon-track>b,.fleet-tile,.operations-rail nav a::before{transition:none!important}}
 .command-bar,.time-conductor{border:1px solid var(--command-border-strong,rgba(226,240,243,.17));background:linear-gradient(135deg,rgba(255,255,255,.105),rgba(255,255,255,.035)),rgba(25,33,39,.88);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 16px 42px rgba(7,13,16,.18);backdrop-filter:blur(18px) saturate(122%)}
 @supports not (backdrop-filter:blur(1px)){.command-bar,.time-conductor{background:rgba(34,44,51,.96)}}
+
+/* Operational interaction polish */
+.alert-focus span,.alert-focus small{font-size:10px;color:var(--command-secondary,#a8b4ba)}
+.alert-row>button:last-child,.maintenance-queue article>button:last-child{font-size:10px}
+.empty-copy{color:var(--command-secondary,#a8b4ba)}
+.alert-filter-bar label{color:var(--command-secondary,#a8b4ba);font-size:10px}
+.alert-filter-bar select,.alert-filter-bar input{height:32px}
+.alert-filter-bar select[multiple]{height:34px;overflow:hidden}
+.alert-filter-actions button,.alert-filter-empty button{min-height:30px;font-size:10px}
+.alert-filter-actions span{font-size:10px}
+.alert-filter-empty p{font-size:10px;color:var(--command-secondary,#a8b4ba)}
+.maintenance-queue>article{grid-template-columns:26px minmax(0,1fr) auto;min-height:74px}
+.queue-rank{align-self:start;margin-top:4px;font:500 11px "Geist Mono";color:var(--command-secondary,#a8b4ba)}
+.queue-identity{display:flex!important;align-items:center;justify-content:space-between;gap:8px}
+.queue-identity .status{display:inline-block;font-size:9px}
+.queue-metrics{display:grid!important;grid-template-columns:1fr 1fr;gap:8px;margin:7px 0;color:var(--command-text,#eef3f3)!important;font:500 11px "Geist Mono"}
+.queue-metrics>span{display:block!important;color:inherit!important;font-size:inherit!important}
+.queue-metrics small{display:block;font:10px "Geist Sans";color:var(--command-secondary,#a8b4ba)}
+.queue-reason{display:block;font-size:10px;line-height:1.35;color:var(--command-secondary,#a8b4ba)}
+.maintenance-queue .queue-metrics,.maintenance-queue .queue-metrics>span{font-size:11px;color:var(--command-text,#eef3f3)}
+.maintenance-queue .queue-metrics small,.maintenance-queue .queue-reason{font-size:10px;color:var(--command-secondary,#a8b4ba)}
+.asset-status-emphasis{position:relative;display:flex;align-items:center;gap:8px}
+.command-palette{padding:10px;overflow:hidden}
+.command-palette header{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;padding:8px 8px 12px;border-bottom:1px solid var(--command-border,rgba(222,237,240,.105))}
+.command-palette header>svg{width:18px;color:var(--signal-primary,#68c8b8)}
+.command-palette header label{min-width:0}
+.command-palette header input{width:100%;height:38px;border:0;background:transparent;color:var(--command-text,#eef3f3);font-size:14px;outline:0}
+.command-palette header input::placeholder{color:var(--command-secondary,#a8b4ba)}
+.command-palette kbd{padding:4px 6px;border:1px solid var(--command-border-strong,rgba(226,240,243,.17));border-radius:6px;color:var(--command-secondary,#a8b4ba);font:10px "Geist Mono"}
+.palette-results{max-height:min(430px,65vh);overflow:auto;padding:7px 0}
+.palette-group{display:block;padding:10px 10px 5px;color:var(--command-secondary,#a8b4ba);font:600 10px "Geist Mono";letter-spacing:.08em;text-transform:uppercase}
+.palette-command-wrap button{display:flex;width:100%;align-items:center;justify-content:space-between;min-height:42px;padding:9px 10px;border:0;border-radius:10px;background:transparent;color:var(--command-secondary,#a8b4ba);text-align:left}
+.palette-command-wrap button.active{background:var(--signal-primary-soft,rgba(104,200,184,.16));color:var(--command-text,#eef3f3)}
+.palette-command-wrap button svg{width:15px;color:var(--command-secondary,#a8b4ba)}
+.palette-empty{display:grid;justify-items:center;gap:5px;padding:42px 16px;color:var(--command-secondary,#a8b4ba);text-align:center}
+.palette-empty svg{width:22px;color:var(--command-secondary,#a8b4ba)}
+.palette-empty p{margin:0;font-size:11px}
+@media(max-width:600px){.command-palette{width:calc(100vw - 24px)}.palette-results{max-height:58vh}}
+
+/* Operational copy must remain readable without relying on colour alone. */
+.tech-label{font-size:12px;color:var(--command-secondary,#a8b4ba)}
+.tile-metric small,.tile-metric em,.fleet-main footer,.asset-heading p,.cc-horizon footer,.asset-metrics small,.sensor-controls>span,.chart-key,.alert-filter-bar label{font-size:12px;color:var(--command-secondary,#a8b4ba)}
+.alert-focus span,.alert-focus small,.maintenance-queue article span,.maintenance-queue article small,.queue-reason{font-size:12px;color:var(--command-secondary,#a8b4ba)}
+.alert-focus strong,.maintenance-queue article strong{font-size:14px;color:var(--command-text,#eef3f3)}
+.maintenance-queue .queue-identity .status-monitor{color:var(--signal-blue,#75a8d7)}
+.maintenance-queue .queue-identity .status-plan_maintenance{color:var(--signal-amber,#d0a462)}
+.maintenance-queue .queue-identity .status-critical{color:var(--signal-critical,#da7377)}
+.maintenance-queue .queue-identity .status-healthy{color:var(--signal-healthy,#76c495)}
+.maintenance-queue>article>.queue-rank{font-size:12px;color:var(--command-secondary,#a8b4ba)}
+.sensor-controls button,.cc-button,.panel-title button,.time-conductor button,.alert-filter-actions button,.alert-filter-empty button,.compare-entry button{font-size:13px}
+.kpi-strip strong .data-arrival-glow{color:inherit;font:inherit}
+.fleet-main footer{max-width:none;margin:0;padding:0}
+.cc-horizon footer{max-width:none;margin:11px 0 0;padding:0;gap:12px;flex-wrap:nowrap}
+.cc-horizon footer span{width:auto}
