@@ -86,13 +86,13 @@ Charts have textual summaries; status uses text plus color; the mobile navigatio
 
 - This is a deterministic simulation, not a physical factory or IoT connection.
 - Local acknowledgements, pins, and maintenance reviews are intentionally non-persistent.
-- Asset comparison is represented by pinned assets; there is no separate multi-chart comparison workspace.
-- The soak gate accelerates 3,600 deterministic selector ticks; it is not a wall-clock 30-minute browser profiler recording.
+- Detailed heap/process profiling is Chromium-specific; Firefox and WebKit were verified with separate 10-minute functional stability sessions.
+- React commit count remains unavailable because the production build intentionally has no React DevTools instrumentation. Worker message rate and the 2 Hz snapshot contract are measured instead.
 - FD001 is simulated turbofan data. Production factory use requires validation on the target equipment and environment.
 
 ## Deployment readiness
 
-The implemented core is stable, but the locked acceptance gate is not yet complete. Three product-scope gaps remain: the alert feed lacks its three requested filters; pinned assets do not yet open a dedicated comparison visualization; and the soak test accelerates selector ticks rather than recording browser memory for 30 wall-clock minutes. No deployment, Vercel change, remote push, database, WebSocket, or server-side simulation session was created.
+The three P1 acceptance gaps are closed. Alert filtering, the lazy pinned-asset comparison route, and a passing repeated 30.02-minute Chromium production soak are verified. No deployment, Vercel change, remote push, database, WebSocket, or server-side simulation session was created.
 
 PRODUCT: LIVEOPS AI RELIABILITY COMMAND CENTER  
 PRIMARY EXPERIENCE: LIVE FLEET SIMULATION  
@@ -100,7 +100,7 @@ CSV UPLOAD: SECONDARY DATA LAB
 DATA SOURCE: NASA FD001  
 MODEL: REAL VERIFIED RUL MODEL  
 SIMULATION: DETERMINISTIC AND MODEL-BACKED  
-COMMAND CENTER: CORE VERIFIED; ACCEPTANCE GAPS REMAIN  
+COMMAND CENTER: P1 ACCEPTANCE COMPLETE
 FLEET MONITORING: VERIFIED  
 LIVE TELEMETRY REPLAY: VERIFIED  
 LIVE RUL TRACKING: VERIFIED  
@@ -109,11 +109,11 @@ MAINTENANCE PRIORITIZATION: VERIFIED
 TIME CONDUCTOR: VERIFIED  
 SIMULATION CONTROLS: VERIFIED  
 WEB WORKER: VERIFIED  
-30-MINUTE ACCELERATED SELECTOR SOAK: PASS  
+30-MINUTE WALL-CLOCK CHROMIUM SOAK: PASS
 CROSS-BROWSER QA: PASS  
 ACCESSIBILITY: PASS  
 PERFORMANCE BUDGETS: PASS  
 KNOWN P0 DEFECTS: NONE  
-KNOWN P1 DEFECTS: 3  
+KNOWN P1 DEFECTS: NONE
 VERCEL DEPLOYMENT: NOT PERFORMED  
-GREEN SIGNAL FOR DEPLOYMENT: NO
+GREEN SIGNAL FOR DEPLOYMENT: YES
