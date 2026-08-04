@@ -1,9 +1,10 @@
 schema_version: "1.0"
 product: "LiveOps AI Reliability Command Center"
 visual_system: "Alloy Glass"
-phase: "phase-0-design-contract"
+phase: "anchor-surfaces-verified"
 repository_facts:
-  current_command_route: "/"
+  starting_command_route: "/"
+  current_command_route: "/command"
   target_landing_route: "/"
   target_command_route: "/command"
   asset_route: "/asset/:assetId"
@@ -17,7 +18,7 @@ repository_facts:
   motion_dependency: "motion@^12.0.6"
 states:
   repository_identity_verified: true
-  phase_0_audit: in_progress
+  phase_0_audit: complete
   layout_contract: complete
   token_contract: complete
   glass_contract: complete
@@ -27,10 +28,10 @@ states:
   command_storyboard: complete
   responsive_plan: complete
   test_plan: complete
-  anchor_landing: not_started
-  anchor_command_center: not_started
-  anchor_conformance_gate: not_run
-  implementation: not_started
+  anchor_landing: complete
+  anchor_command_center: complete
+  anchor_conformance_gate: pass
+  implementation: in_progress
   local_verification: not_run
   preview_verification: not_run
   production_verification: not_run
@@ -42,4 +43,5 @@ locked_constraints:
   additional_motion_library: forbidden
   purple: forbidden
   webgl_video_lottie: forbidden
-unresolved_items: []
+unresolved_items:
+  - "Exact Vercel project ID requires authenticated verification before remote release."
