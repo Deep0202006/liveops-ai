@@ -5,7 +5,7 @@ import { defineConfig } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests/soak",
   outputDir: "./test-results/soak",
-  timeout: 33 * 60_000,
+  timeout: 35 * 60_000,
   expect: { timeout: 10_000 },
   fullyParallel: false,
   workers: 1,
@@ -14,6 +14,7 @@ export default defineConfig({
     baseURL: "http://127.0.0.1:4173",
     browserName: "chromium",
     colorScheme: "dark",
+    actionTimeout: 10_000,
     launchOptions: {
       executablePath: "C:/Program Files/Google/Chrome/Application/chrome.exe",
       args: ["--enable-precise-memory-info"],

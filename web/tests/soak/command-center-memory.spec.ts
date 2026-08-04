@@ -67,7 +67,7 @@ async function scheduledInteraction(page: Page, minute: number) {
   else if (action === 10) await selectNext(page.getByLabel("Simulation speed"));
   else if (action === 11) await clickIfVisible(page.getByRole("link", { name: "Maintenance" }));
   else if (action === 12) { await clickIfVisible(page.getByRole("link",{name:"Model Evidence"}));await expect(page.locator(".evidence-identity code")).not.toHaveText("Loading");await page.waitForTimeout(1_500); }
-  else if (action === 13) { await clickIfVisible(page.getByRole("link",{name:"Command Center"}));await page.waitForLoadState("networkidle"); }
+  else if (action === 13) { await clickIfVisible(page.locator(".operations-rail").getByRole("link",{name:"Command Center",exact:true}));await page.waitForLoadState("networkidle"); }
   else {
     await clickIfVisible(page.getByRole("button", { name: /Commands/ }));
     const backdrop = page.locator(".modal-backdrop");
@@ -93,7 +93,6 @@ function increasingWithoutBound(values: number[]) {
 }
 
 test("30-minute production command center Chromium memory soak", async ({ browser, page }) => {
-  test.slow();
   await mkdir(ARTIFACT_DIR, { recursive: true });
   const failures: Failure[] = [];
   let requestCount = 0;
@@ -148,7 +147,11 @@ test("30-minute production command center Chromium memory soak", async ({ browse
   for (let minute = 0; minute <= 30; minute += 1) {
     const due = start + minute * 60_000;
     if (Date.now() < due) await page.waitForTimeout(due - Date.now());
-    if (minute > 0 && minute < 30) await scheduledInteraction(page, minute);
+    if (minute > 0 && minute < 30) {
+      console.log(`SOAK_MINUTE_${String(minute).padStart(2, "0")}_INTERACTION_START`);
+      await scheduledInteraction(page, minute);
+      console.log(`SOAK_MINUTE_${String(minute).padStart(2, "0")}_INTERACTION_COMPLETE`);
+    }
     if (minute === 0 || minute === 15 || minute === 30) await page.screenshot({ path: path.join(ARTIFACT_DIR, `minute-${String(minute).padStart(2, "0")}.png`), fullPage: true });
     if (!(SAMPLE_MINUTES as readonly number[]).includes(minute)) continue;
     const perf = await cdp.send("Performance.getMetrics") as { metrics: { name: string; value: number }[] };
