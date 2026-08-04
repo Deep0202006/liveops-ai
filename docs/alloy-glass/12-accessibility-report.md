@@ -1,7 +1,8 @@
 # Alloy Glass Accessibility Report
 
-Date: 2026-08-04  
-Branch: `feat/alloy-glass-command-center`  
+Date: 2026-08-04
+
+Branch: `feat/alloy-glass-command-center`
 Result: **PASS - no serious or critical violations in tested states**
 
 ## Automated result

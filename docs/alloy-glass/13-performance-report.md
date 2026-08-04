@@ -1,7 +1,8 @@
 # Alloy Glass Performance Report
 
-Date: 2026-08-04  
-Branch: `feat/alloy-glass-command-center`  
+Date: 2026-08-04
+
+Branch: `feat/alloy-glass-command-center`
 Result: **PASS - local production build and wall-clock soak**
 
 ## Bundle budgets
