@@ -131,7 +131,7 @@ test("30-minute production command center Chromium memory soak", async ({ browse
   const cdp = await page.context().newCDPSession(page);
   const browserCdp = await browser.newBrowserCDPSession();
   await cdp.send("Performance.enable");
-  await page.goto("/");
+  await page.goto("/command");
   await expect(page.getByText("LIVE SIMULATION")).toBeVisible();
   await page.waitForLoadState("networkidle");
   await page.getByLabel("Simulation speed").selectOption("20");

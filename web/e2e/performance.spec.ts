@@ -9,7 +9,7 @@ test.beforeEach(async ({ page }) => page.addInitScript(() => {
 }));
 const collect = (page: Page): Promise<Metrics> => page.evaluate(() => { const resources = performance.getEntriesByType("resource") as PerformanceResourceTiming[]; return { lcp: window.__releaseLcp, cls: window.__releaseCls, requests: resources.length, transferred: resources.reduce((sum, entry) => sum + entry.transferSize, 0) }; });
 test("command center remains responsive in production preview", async ({ page }) => {
-  await page.goto("/"); await page.waitForLoadState("networkidle"); const initial = await collect(page); console.log("SHIFT_SOURCES", await page.evaluate(() => window.__shiftSources));
+  await page.goto("/command"); await page.waitForLoadState("networkidle"); const initial = await collect(page); console.log("SHIFT_SOURCES", await page.evaluate(() => window.__shiftSources));
   expect(initial.lcp).toBeLessThan(2500); expect(initial.cls).toBeLessThan(.05);
   const start = performance.now(); await page.locator(".time-conductor").getByRole("button", { name: "Step one cycle" }).click(); await expect(page.getByText(/CYCLE 1\/29/)).toBeVisible(); const interactionMs = performance.now() - start;
   expect(interactionMs).toBeLessThan(200); await page.waitForTimeout(650); const updated = await collect(page); expect(updated.cls).toBeLessThan(.05); console.log(JSON.stringify({ initial, updated, interactionMs }));

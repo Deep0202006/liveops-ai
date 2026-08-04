@@ -2,7 +2,7 @@ import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
 test("fleet controls, asset focus, queue, and command palette", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/command");
   await expect(page.getByText("LIVE SIMULATION")).toBeVisible();
   await expect(page.getByText("No physical factory connection")).toBeVisible();
   await expect(page.getByRole("heading", { name: "Rotating assets" })).toBeVisible();
@@ -15,14 +15,14 @@ test("fleet controls, asset focus, queue, and command palette", async ({ page })
   await expect(page.getByText("SELECTED ASSET COMMAND VIEW")).toBeVisible();
   await page.getByRole("link", { name: "Maintenance" }).click();
   await expect(page.getByRole("heading", { name: "Priority queue" })).toBeVisible();
-  await page.goto("/");
+  await page.goto("/command");
   await page.getByRole("button", { name: /Commands/ }).click();
   await expect(page.getByRole("dialog", { name: "Command palette" })).toBeVisible();
 });
 
 test("command center has no serious accessibility violations", async ({ page, browserName }) => {
   test.skip(browserName !== "chromium", "Automated axe gate runs in Chromium");
-  await page.goto("/");
+  await page.goto("/command");
   await page.waitForLoadState("networkidle");
   const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]).analyze();
   expect(results.violations.filter((item) => item.impact === "critical" || item.impact === "serious")).toEqual([]);
@@ -30,7 +30,7 @@ test("command center has no serious accessibility violations", async ({ page, br
 
 test("mobile command center is usable without page overflow", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/");
+  await page.goto("/command");
   await expect(page.getByText("LIVE SIMULATION")).toBeVisible();
   expect(await page.locator("body").evaluate((body) => body.scrollWidth)).toBeLessThanOrEqual(390);
   await page.getByRole("button", { name: "Open navigation" }).click();
@@ -39,7 +39,7 @@ test("mobile command center is usable without page overflow", async ({ page }) =
 });
 
 test("alert feed combines severity, asset, and event-type filters across simulation controls", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/command");
   await page.getByLabel("Seek simulation cycle").fill("29");
   await page.getByLabel("Alert severity").selectOption("warning");
   await page.getByLabel("Alert asset").fill("RT-12");
@@ -62,7 +62,7 @@ test("alert feed combines severity, asset, and event-type filters across simulat
 });
 
 test("pin limit and shared comparison journey remain synchronized", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/command");
   const pins = page.getByRole("button", { name: /^Pin RT-/ });
   await pins.nth(0).click();
   await pins.nth(1).click();

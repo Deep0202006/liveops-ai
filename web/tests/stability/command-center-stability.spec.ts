@@ -8,7 +8,7 @@ test("10-minute accelerated replay remains stable",async({page,browserName})=>{
   page.on("console",message=>{if(message.type()==="error")failures.push(message.text())});
   page.on("pageerror",error=>failures.push(error.message));
   await page.addInitScript(()=>{const NativeWorker=window.Worker;window.__stabilityWorkers={created:0,active:0};window.Worker=class extends NativeWorker{constructor(url:string|URL,options?:WorkerOptions){super(url,options);window.__stabilityWorkers!.created+=1;window.__stabilityWorkers!.active+=1;const terminate=this.terminate.bind(this);this.terminate=()=>{window.__stabilityWorkers!.active-=1;terminate()}}}});
-  await page.goto("/");await expect(page.getByText("LIVE SIMULATION")).toBeVisible();await page.getByLabel("Simulation speed").selectOption("20");
+  await page.goto("/command");await expect(page.getByText("LIVE SIMULATION")).toBeVisible();await page.getByLabel("Simulation speed").selectOption("20");
   const started=Date.now();
   for(let minute=0;minute<10;minute+=1){
     const due=started+minute*60_000;if(Date.now()<due)await page.waitForTimeout(due-Date.now());

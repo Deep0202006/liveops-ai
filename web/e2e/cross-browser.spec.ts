@@ -4,7 +4,7 @@ test("critical command-center and secondary routes are cross-browser clean", asy
   const failures: string[] = [];
   page.on("console", (message) => { if (message.type() === "error") failures.push(message.text()); });
   page.on("pageerror", (error) => failures.push(error.message));
-  await page.goto("/");
+  await page.goto("/command");
   await expect(page.getByRole("heading", { name: "Rotating assets" })).toBeVisible();
   await page.getByRole("button", { name: "Step one cycle" }).last().click();
   await page.locator(".fleet-main").nth(1).click();
@@ -22,7 +22,7 @@ test("critical command-center and secondary routes are cross-browser clean", asy
 
 test("mobile navigation opens and closes by keyboard", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/");
+  await page.goto("/command");
   await page.getByRole("button", { name: "Open navigation" }).click();
   await expect(page.getByRole("dialog", { name: "Application navigation" })).toBeVisible();
   await page.keyboard.press("Escape");
@@ -31,7 +31,7 @@ test("mobile navigation opens and closes by keyboard", async ({ page }) => {
 
 test("accelerated replay, filters, comparison, and scenario cleanup stay cross-browser clean", async ({ page, browserName }) => {
   const failures:string[]=[];page.on("console",message=>{if(message.type()==="error")failures.push(message.text())});page.on("pageerror",error=>failures.push(error.message));
-  await page.goto("/");
+  await page.goto("/command");
   await page.getByLabel("Simulation speed").selectOption("20");
   await page.getByLabel("Seek simulation cycle").fill("29");
   await page.getByLabel("Alert severity").selectOption("warning");
